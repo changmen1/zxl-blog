@@ -2,18 +2,22 @@ import type { FC } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
-
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 const DefaultLayout: FC = () => {
     return (
-        <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-1 overflow-y-auto bg-main">
-                <Outlet />
-            </main>
-            <Footer />
+        <div className="relative z-10 flex w-full flex-col bg-white">
+            <SidebarProvider>
+                <SidebarInset>
+                    <Header />
+                    <main className="flex-1 bg-main mt-[128px]">
+                        <Outlet />
+                    </main>
+                    <Footer />
+                </SidebarInset>
+            </SidebarProvider>
         </div>
-    )
-}
+    );
+};
 
 export default DefaultLayout;
