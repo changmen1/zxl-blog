@@ -15,6 +15,12 @@
   --color-headerColor: var(--headerColor);
   /* 主内容区域主题色 */
   --color-main: var(--main);
+  /* 标题左边框颜色 */
+  --color-bl: var(--bl);
+  /* 日期时间 小标题 颜色 */
+  --color-dateCl: var(--dateCl);
+  /* 梦境热门推荐背景颜色 */
+  --color-dreamsCl: var(--dreamsCl);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -50,13 +56,13 @@
 
 :root {
   --radius: 0.625rem;
-  /* 顶部导航主题色 */
   --customGray: #3c3c3c;
   --headerColorF: #ffffff;
-  /* 顶部文字颜色 */
   --headerColor: #ffffff;
-  /* 主内容区域主题色 */
-  --main: #eeeeee;
+  --main: #efefef;
+  --bl: #000000;
+  --dateCl: #8a8a8a;
+  --dreamsCl: #ffffff;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -95,6 +101,9 @@
   --headerColorF: #454545;
   --headerColor: #9d6865;
   --main: #101213;
+  --bl: #ffffff;
+  --dateCl: #8a8a8a;
+  --dreamsCl: oklch(0.145 0 0);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
