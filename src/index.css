@@ -10,6 +10,9 @@
   --radius-xl: calc(var(--radius) + 4px);
   /* 顶部导航主题色 */
   --color-customGray: var(--customGray);
+  --color-headerColorF: var(--headerColorF);
+  /* 顶部文字颜色 */
+  --color-headerColor: var(--headerColor);
   /* 主内容区域主题色 */
   --color-main: var(--main);
   --color-background: var(--background);
@@ -49,6 +52,9 @@
   --radius: 0.625rem;
   /* 顶部导航主题色 */
   --customGray: #3c3c3c;
+  --headerColorF: #ffffff;
+  /* 顶部文字颜色 */
+  --headerColor: #ffffff;
   /* 主内容区域主题色 */
   --main: #eeeeee;
   --background: oklch(1 0 0);
@@ -85,6 +91,10 @@
 }
 
 .dark {
+  --customGray: #1b1d20;
+  --headerColorF: #454545;
+  --headerColor: #9d6865;
+  --main: #101213;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -125,5 +135,9 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
