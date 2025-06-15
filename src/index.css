@@ -19,8 +19,8 @@
   --color-bl: var(--bl);
   /* 日期时间 小标题 颜色 */
   --color-dateCl: var(--dateCl);
-  /* 梦境热门推荐背景颜色 */
-  --color-dreamsCl: var(--dreamsCl);
+  /* 时间线内容区背景 */
+  --color-Timeline: var(--Timeline);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -59,10 +59,10 @@
   --customGray: #3c3c3c;
   --headerColorF: #ffffff;
   --headerColor: #ffffff;
-  --main: #efefef;
+  --main: #e8e8e8;
   --bl: #000000;
   --dateCl: #8a8a8a;
-  --dreamsCl: #ffffff;
+  --Timeline: #f1f1f1;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -103,7 +103,7 @@
   --main: #101213;
   --bl: #ffffff;
   --dateCl: #8a8a8a;
-  --dreamsCl: oklch(0.145 0 0);
+  --Timeline: #1b1d20;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
