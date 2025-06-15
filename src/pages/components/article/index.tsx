@@ -5,7 +5,7 @@ import title from "@/assets/article/title.jpg"
 
 const Article: FC = () => {
     return (
-        <main className="flex flex-col items-start w-full p-2.5">
+        <main className="flex flex-col items-start w-full">
             <div className="border-l-4 border-l-bl pl-2 mb-2.5">
                 <h1>最新文章</h1>
                 <div>Latest articles</div>
@@ -43,45 +43,37 @@ const Article: FC = () => {
                 </div>
             </div>
             <ul className="w-full">
-                <li className="flex justify-between w-full mt-5">
+                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
                     <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4">131℃</span>
+                        <span className="text-dateCl mr-4 text-[14px] font-black">131℃</span>
                         <span className="text-dateCl mr-4">/</span>
                         <span>上一次是什么时候呢</span>
                     </div>
-                    <div className="flex-3 text-dateCl">2025-06-15 1:50</div>
+                    <div className="flex-3 text-dateCl text-[14px] font-black ">2025-06-15 1:50</div>
                 </li>
-                <li className="flex justify-between w-full mt-5">
+                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
                     <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4">131℃</span>
+                        <span className="text-dateCl mr-4 text-[14px] font-black">131℃</span>
                         <span className="text-dateCl mr-4">/</span>
                         <span>上一次是什么时候呢</span>
                     </div>
-                    <div className="flex-3 text-dateCl">2025-06-15 1:50</div>
+                    <div className="flex-3 text-dateCl text-[14px] font-black ">2025-06-15 1:50</div>
                 </li>
-                <li className="flex justify-between w-full mt-5">
+                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
                     <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4">131℃</span>
+                        <span className="text-dateCl mr-4 text-[14px] font-black">131℃</span>
                         <span className="text-dateCl mr-4">/</span>
                         <span>上一次是什么时候呢</span>
                     </div>
-                    <div className="flex-3 text-dateCl">2025-06-15 1:50</div>
+                    <div className="flex-3 text-dateCl text-[14px] font-black ">2025-06-15 1:50</div>
                 </li>
-                <li className="flex justify-between w-full mt-5">
+                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
                     <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4">131℃</span>
+                        <span className="text-dateCl mr-4 text-[14px] font-black">131℃</span>
                         <span className="text-dateCl mr-4">/</span>
                         <span>上一次是什么时候呢</span>
                     </div>
-                    <div className="flex-3 text-dateCl">2025-06-15 1:50</div>
-                </li>
-                <li className="flex justify-between w-full mt-5">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4">131℃</span>
-                        <span className="text-dateCl mr-4">/</span>
-                        <span>上一次是什么时候呢</span>
-                    </div>
-                    <div className="flex-3 text-dateCl">2025-06-15 1:50</div>
+                    <div className="flex-3 text-dateCl text-[14px] font-black ">2025-06-15 1:50</div>
                 </li>
             </ul>
         </main>

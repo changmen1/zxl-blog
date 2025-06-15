@@ -3,10 +3,12 @@ import Article from "./components/article";
 import Dreams from "./components/Dreams";
 import Recommend from "./components/recommend";
 import bg from "@/assets/bg.jpg"
+import Timeline from "./components/Timeline";
 
 const Home: FC = () => {
     return (
         <div className="select-none">
+            {/* 背景 */}
             <div className="mt-[-50px] h-[100vh] md:mt-0 md:h-[41.8vw]">
                 <div className="fixed h-[100vh] w-full md:h-[41.8vw]">
                     {/* TODO 背景说明 Bromo, Area Gunung Bromo, Podokoyo, Kabupaten de Pasuruan, Java oriental, Indoné */}
@@ -25,7 +27,8 @@ const Home: FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="relative z-10 w-full bg-main p-5 flex justify-between gap-4 mb-10">
+            {/* 文章 */}
+            <div className="relative z-10 w-full bg-main p-5 flex justify-between gap-4 pb-10 pl-18 pr-18">
                 <div className="flex-1 basis-1/3">
                     <Article />
                 </div>
@@ -35,6 +38,10 @@ const Home: FC = () => {
                 <div className="flex-1 basis-1/3">
                     <Recommend />
                 </div>
+            </div>
+            {/* 时间线 */}
+            <div className="relative z-10 w-full bg-Timeline pb-10 pl-18 pr-18">
+                <Timeline/>
             </div>
         </div>
     );
