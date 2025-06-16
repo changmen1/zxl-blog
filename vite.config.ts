@@ -1,28 +1,32 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
-import path from "path"
+import path from 'path'
 
+export default defineConfig(({ mode }) => {
+  // 加载 .env、.env.development、.env.production 等
+  const env = loadEnv(mode, process.cwd(), '')
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss(),],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+  return {
+    plugins: [react(), tailwindcss()],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
     },
-  },
-  server: {
-    // 必须代理wakatime  后期部署需要转移到后端进行代理
-    proxy: {
-      '/wakatime': {
-        target: 'https://wakatime.com/api/v1',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/wakatime/, ''),
-        headers: {
-          Authorization: `Basic ${btoa('waka_cfdc8595-f715-40cb-897c-4fe0405de740:')}`,
+    server: {
+      host: true,
+      proxy: {
+        '/wakatime': {
+          target: 'https://wakatime.com/api/v1',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/wakatime/, ''),
+          headers: {
+            Authorization: `Basic ${Buffer.from(`${env.VITE_WAKATIME_API_KEY}:`).toString('base64')}`,
+          },
         },
       },
     },
   }
 })
+
