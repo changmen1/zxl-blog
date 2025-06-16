@@ -11,7 +11,6 @@ const Home: FC = () => {
             {/* 背景 */}
             <div className="mt-[-50px] h-[100vh] md:mt-0 md:h-[41.8vw]">
                 <div className="fixed h-[100vh] w-full md:h-[41.8vw]">
-                    {/* TODO 背景说明 Bromo, Area Gunung Bromo, Podokoyo, Kabupaten de Pasuruan, Java oriental, Indoné */}
                     <div
                         className="h-full w-full bg-cover bg-center bg-no-repeat transition-all duration-200"
                         style={{
@@ -41,7 +40,7 @@ const Home: FC = () => {
             </div>
             {/* 时间线 */}
             <div className="relative z-10 w-full bg-Timeline pb-10 pl-18 pr-18">
-                <Timeline/>
+                <Timeline />
             </div>
         </div>
     );

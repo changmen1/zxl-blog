@@ -1,8 +1,9 @@
 import { ModeToggle } from "@/components/mode-toggle";
-import type { FC } from "react";
+import { type FC } from "react";
 import { NavLink } from "react-router-dom";
 
 const Header: FC = () => {
+
     return (
         <>
             {/* 顶部导航栏固定 */}

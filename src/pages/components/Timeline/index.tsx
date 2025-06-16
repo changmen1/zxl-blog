@@ -86,18 +86,18 @@ const Timeline = () => {
                     className="w-40 h-24 cursor-pointer"
                     style={{
                         backgroundImage: `url(${qf})`,
-                        backgroundSize: 'contain',       // 保证图片完整显示
-                        backgroundRepeat: 'no-repeat',   // 不重复
-                        backgroundPosition: 'center',    // 居中显示
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
                     }} />
                 <div
                     ref={cardCRef}
                     className="w-40 h-24 cursor-pointer"
                     style={{
                         backgroundImage: `url(${qf})`,
-                        backgroundSize: 'contain',       // 保证图片完整显示
-                        backgroundRepeat: 'no-repeat',   // 不重复
-                        backgroundPosition: 'center',    // 居中显示
+                        backgroundSize: 'contain', 
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
                     }} />
             </div>
         </div>
