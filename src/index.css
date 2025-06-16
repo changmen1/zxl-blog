@@ -1,7 +1,18 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* 编辑器字体 ZCOOL QingKe HuangYou */
+@font-face {
+  font-family: "ZCOOL XiaoWei", sans-serif;
+  src: url('./assets/Fonts/code/ZCOOLXiaoWei-Regular.ttf') format('truetype');
+}
+
 @custom-variant dark (&:is(.dark *));
+
+/* 自定义字体 */
+@theme {
+  --font-secound: "ZCOOL XiaoWei", sans-serif;
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -21,6 +32,10 @@
   --color-dateCl: var(--dateCl);
   /* 时间线内容区背景 */
   --color-Timeline: var(--Timeline);
+  /* 编辑器 编程语言 标题颜色 */
+  --color-EditorTl: var(--EditorTl);
+  /* 编辑器 编程语言 颜色 */
+  --color-EditorCl: var(--EditorCl);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -63,6 +78,8 @@
   --bl: #000000;
   --dateCl: #8a8a8a;
   --Timeline: #f1f1f1;
+  --EditorTl: #ffffff;
+  --EditorCl: #ffffff;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -104,6 +121,8 @@
   --bl: #ffffff;
   --dateCl: #8a8a8a;
   --Timeline: #1b1d20;
+  --EditorTl: #ffdc00;
+  --EditorCl: #D87093;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
