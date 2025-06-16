@@ -10,7 +10,7 @@ const DefaultLayout: FC = () => {
             <SidebarProvider>
                 <SidebarInset>
                     <Header />
-                    <main className="flex-1 bg-main mt-[128px]">
+                    <main className="flex-1 bg-main mt-[100px]">
                         <Outlet />
                     </main>
                     <Footer />

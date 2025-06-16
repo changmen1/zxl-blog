@@ -1,17 +1,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* 编辑器字体 ZCOOL QingKe HuangYou */
-@font-face {
-  font-family: "ZCOOL XiaoWei", sans-serif;
-  src: url('./assets/Fonts/code/ZCOOLXiaoWei-Regular.ttf') format('truetype');
-}
 
 @custom-variant dark (&:is(.dark *));
 
-/* 自定义字体 */
 @theme {
-  --font-secound: "ZCOOL XiaoWei", sans-serif;
+  /* 中文文章标题 */
+  --font-ZCOOL: "ZCOOL XiaoWei", sans-serif;
+  /* 英文文章标题 */
+  --font-YWZCOOL: "Edu NSW ACT Hand Pre", cursive;
+  /* 中文文章条目 */
+  --font-KuaiLe: "ZCOOL KuaiLe", sans-serif;
+  /* 数字 */
+  --font-Press: "Press Start 2P", system-ui;
+  --font-Audiowide: "Audiowide", sans-serif;
 }
 
 @theme inline {

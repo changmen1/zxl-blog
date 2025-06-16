@@ -6,6 +6,7 @@ import path from 'path'
 export default defineConfig(({ mode }) => {
   // 加载 .env、.env.development、.env.production 等
   const env = loadEnv(mode, process.cwd(), '')
+  console.log('>>>>>>>>VITE_WAKATIME_API_KEY', env.VITE_WAKATIME_API_KEY)
 
   return {
     plugins: [react(), tailwindcss()],
@@ -22,7 +23,7 @@ export default defineConfig(({ mode }) => {
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/wakatime/, ''),
           headers: {
-            Authorization: `Basic ${Buffer.from(`${env.VITE_WAKATIME_API_KEY}:`).toString('base64')}`,
+            Authorization: `Basic ${btoa(`${env.VITE_WAKATIME_API_KEY}:`)}`,
           },
         },
       },

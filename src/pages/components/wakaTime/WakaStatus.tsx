@@ -50,9 +50,9 @@ export default function WakaLanguageStats() {
     return (
         <div className="text-sm">
             {languages.length > 0 ? (
-                <div className='flex'>
+                <div className='flex text-[16px]'>
                     <div className='flex mr-10'>
-                        <p className="font-medium text-EditorTl font-secound">今日使用编辑器:</p>
+                        <p className="font-medium text-EditorTl">今日开发环境:</p>
                         <ul className="list-disc ml-4 flex">
                             {editors.map((editor) => {
                                 const icon = getEditorIcon(editor.name);
@@ -72,7 +72,7 @@ export default function WakaLanguageStats() {
                         </ul>
                     </div>
                     <div className='flex'>
-                        <p className="font-medium text-EditorTl">今日使用编程语言:</p>
+                        <p className="font-medium text-EditorTl">今日语言使用分布:</p>
                         <ul className="list-disc ml-4 flex">
                             {languages.map((language) => (
                                 <li key={language.name} className='text-EditorCl mr-5'>
