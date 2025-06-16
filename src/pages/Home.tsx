@@ -4,10 +4,12 @@ import Dreams from "./components/Dreams";
 import Recommend from "./components/recommend";
 import bg from "@/assets/bg.jpg"
 import Timeline from "./components/Timeline";
+import { Outlet } from "react-router-dom";
 
 const Home: FC = () => {
     return (
         <div className="select-none">
+            <Outlet />
             {/* 背景 */}
             <div className="mt-[-50px] h-[100vh] md:mt-0 md:h-[41.8vw]">
                 <div className="fixed h-[100vh] w-full md:h-[41.8vw]">

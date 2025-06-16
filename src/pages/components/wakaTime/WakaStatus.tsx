@@ -50,7 +50,7 @@ export default function WakaLanguageStats() {
     return (
         <div className="text-sm">
             {languages.length > 0 ? (
-                <div className='flex text-[16px]'>
+                <div className='flex text-[8px]'>
                     <div className='flex mr-10'>
                         <p className="font-medium text-EditorTl">今日开发环境:</p>
                         <ul className="list-disc ml-4 flex">
