@@ -4,9 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* 
-DotGothic16 游戏像素风格
-*/
 @theme {
   /* 中文文章标题 */
   --font-ZCOOL: "ZCOOL XiaoWei", sans-serif;
@@ -30,6 +27,8 @@ DotGothic16 游戏像素风格
   /* 顶部导航主题色 */
   --color-customGray: var(--customGray);
   --color-headerColorF: var(--headerColorF);
+  /* 顶部标题附栏文字颜色 */
+  --color-mysidebar: var(--mysidebar);
   /* 顶部文字颜色 */
   --color-headerColor: var(--headerColor);
   /* 主内容区域主题色 */
@@ -81,6 +80,7 @@ DotGothic16 游戏像素风格
   --radius: 0.625rem;
   --customGray: #3c3c3c;
   --headerColorF: #ffffff;
+  --mysidebar: #898989;
   --headerColor: #ffffff;
   --main: #e8e8e8;
   --bl: #000000;
@@ -124,6 +124,7 @@ DotGothic16 游戏像素风格
 .dark {
   --customGray: #1b1d20;
   --headerColorF: #454545;
+  --mysidebar: #898989;
   --headerColor: #9d6865;
   --main: #101213;
   --bl: #ffffff;
