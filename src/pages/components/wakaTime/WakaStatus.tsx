@@ -25,24 +25,25 @@ export default function WakaLanguageStats() {
         return `${minutes} 分钟`;
     }
 
-    useEffect(() => {
-        async function fetchWakaSummary() {
-            try {
-                const today = new Date().toISOString().slice(0, 10);
-                const res = await fetch(`/wakatime/users/current/summaries?start=${today}&end=${today}`);
-                const json = await res.json();
-                const editorStats: EditorStat[] = json.data?.[0]?.editors || [];
-                setEditors(editorStats);
-                const languageStats: LanguageStat[] = json.data?.[0]?.languages || [];
-                setLanguages(languageStats);
-            } catch (err) {
-                console.error('小主请求错误了请查看apikey', err);
-            } finally {
-                console.error('小主接口错误了');
-            }
+    const handleFetchWakaSummary = async () => {
+        try {
+            const today = new Date().toISOString().slice(0, 10);
+            const res = await fetch(`/wakatime/users/current/summaries?start=${today}&end=${today}`);
+            const json = await res.json();
+            console.log(">>>json", json)
+            const editorStats: EditorStat[] = json.data?.[0]?.editors || [];
+            setEditors(editorStats);
+            const languageStats: LanguageStat[] = json.data?.[0]?.languages || [];
+            setLanguages(languageStats);
+        } catch (err) {
+            console.error('小主请求错误了请查看apikey', err);
+        } finally {
+            console.error('小主接口错误了');
         }
-        // 组件挂载时请求一次
-        fetchWakaSummary();
+    }
+
+    useEffect(() => {
+        handleFetchWakaSummary()
     }, []);
 
 
@@ -83,7 +84,10 @@ export default function WakaLanguageStats() {
                     </div>
                 </div>
             ) : (
-                <p>小主今天还没有编码数据</p>
+                <div className='text-center'>
+                    <p className="font-DotGothic16 text-EditorTl">小主今天还没有编码数据</p>
+                    <p className="font-Pixelify text-EditorTl">There is no coding data today.</p>
+                </div>
             )}
         </div>
     );

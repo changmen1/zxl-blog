@@ -4,6 +4,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* 
+DotGothic16 游戏像素风格
+*/
 @theme {
   /* 中文文章标题 */
   --font-ZCOOL: "ZCOOL XiaoWei", sans-serif;
@@ -11,10 +14,12 @@
   --font-YWZCOOL: "Edu NSW ACT Hand Pre", cursive;
   /* 中文文章条目 */
   --font-KuaiLe: "ZCOOL KuaiLe", sans-serif;
-  /* 数字 游戏风格像素 */
-  --font-Press: "Press Start 2P", system-ui;
   /* 数字 */
   --font-Audiowide: "Audiowide", sans-serif;
+  /* 游戏像素风格 中文字体 */
+  --font-DotGothic16: "DotGothic16", sans-serif;
+  /* 游戏像素风格 英文字体 */
+  --font-Pixelify: "Pixelify Sans", sans-serif;
 }
 
 @theme inline {
