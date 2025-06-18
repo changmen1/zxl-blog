@@ -1,6 +1,7 @@
+import GooeyNav from "@/components/bits/GooeyNav";
 import { ModeToggle } from "@/components/mode-toggle";
 import { type FC } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header: FC = () => {
     const navigate = useNavigate();
@@ -11,35 +12,26 @@ const Header: FC = () => {
         });
     }
 
+    const items = [
+        { label: "Home", href: "/" },
+        { label: "About", href: "/blog" },
+    ];
+
     return (
         <>
             {/* 顶部导航栏固定 */}
             <header className="fixed top-0 right-0 left-0 z-20 flex h-12 items-center justify-between border-b bg-customGray px-3 py-2 shadow-sm">
                 <div className="text-xl font-bold text-headerColor cursor-pointer" onClick={() => handlePath('/')}>Zxl Blog</div>
-                <nav className="space-x-6">
-                    <NavLink
-                        to="/"
-                        end
-                        className={({ isActive }) =>
-                            isActive
-                                ? "text-headerColor"
-                                : "text-headerColor transition hover:text-green-500"
-                        }
-                    >
-                        主页
-                    </NavLink>
-                    <NavLink
-                        to="/blog"
-                        className={({ isActive }) =>
-                            isActive
-                                ? "text-headerColor"
-                                : "text-headerColor transition hover:text-green-500"
-                        }
-                    >
-                        关于我
-                    </NavLink>
-                </nav>
-                <ModeToggle />
+                <GooeyNav
+                    items={items}
+                    particleCount={15}
+                    particleDistances={[90, 10]}
+                    particleR={100}
+                    initialActiveIndex={0}
+                    animationTime={600}
+                    timeVariance={300}
+                    colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+                />
             </header>
             {/* 标题栏固定在导航下方 */}
             <div className="fixed top-12 right-0 left-0 z-20 flex h-20 items-center bg-headerColorF justify-between border-b px-3 py-2">
