@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ModeToggle } from "../mode-toggle";
 
 interface GooeyNavItem {
@@ -33,6 +33,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     const filterRef = useRef<HTMLSpanElement>(null);
     const textRef = useRef<HTMLSpanElement>(null);
     const [activeIndex, setActiveIndex] = useState<number>(initialActiveIndex);
+    const navigate = useNavigate();
     const noise = (n = 1) => n / 2 - Math.random() * n;
     const getXY = (
         distance: number,
@@ -108,7 +109,10 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
         Object.assign(textRef.current.style, styles);
         textRef.current.innerText = element.innerText;
     };
-    const handleClick = (e: React.MouseEvent<HTMLLIElement>, index: number) => {
+    const handleClick = (e: React.MouseEvent<HTMLLIElement>, index: number, path: string) => {
+        navigate(path, {
+            replace: true,
+        });
         const liEl = e.currentTarget;
         if (activeIndex === index) return;
         setActiveIndex(index);
@@ -128,7 +132,8 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     };
     const handleKeyDown = (
         e: React.KeyboardEvent<HTMLAnchorElement>,
-        index: number
+        index: number,
+        path: string
     ) => {
         if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -136,7 +141,8 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             if (liEl) {
                 handleClick(
                     { currentTarget: liEl } as React.MouseEvent<HTMLLIElement>,
-                    index
+                    index,
+                    path
                 );
             }
         }
@@ -164,7 +170,6 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
 
     return (
         <>
-            {/* This effect is quite difficult to recreate faithfully using Tailwind, so a style tag is a necessary workaround */}
             <style>
                 {`
           :root {
@@ -305,7 +310,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             </style>
             <div className="relative" ref={containerRef}>
                 <nav
-                    className="flex relative"
+                    className="flex items-center justify-between px-4 py-2 w-full"
                     style={{ transform: "translate3d(0,0,0.01px)" }}
                 >
                     <ul
@@ -319,21 +324,21 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
                         {items.map((item, index) => (
                             <li
                                 key={index}
-                                className={`py-[0.6em] px-[1em] rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-white ${activeIndex === index ? "active" : ""
+                                className={`text-[13px] py-[0.6em] px-[1em] rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-white ${activeIndex === index ? "active" : ""
                                     }`}
-                                onClick={(e) => handleClick(e, index)}
+                                onClick={(e) => handleClick(e, index, item.href)}
                             >
                                 <NavLink
                                     to={item.href}
-                                    onKeyDown={(e) => handleKeyDown(e, index)}
+                                    onKeyDown={(e) => handleKeyDown(e, index, item.href)}
                                     className="outline-none"
                                 >
                                     {item.label}
                                 </NavLink>
                             </li>
                         ))}
-                        <ModeToggle />
                     </ul>
+                    <ModeToggle />
                 </nav>
                 <span className="effect filter" ref={filterRef} />
                 <span className="effect text" ref={textRef} />

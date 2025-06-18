@@ -1,5 +1,4 @@
 import GooeyNav from "@/components/bits/GooeyNav";
-import { ModeToggle } from "@/components/mode-toggle";
 import { type FC } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -13,8 +12,10 @@ const Header: FC = () => {
     }
 
     const items = [
-        { label: "Home", href: "/" },
-        { label: "About", href: "/blog" },
+        { label: "主页", href: "/" },
+        { label: "自传", href: "/blog" },
+        { label: "简历", href: "/cv" },
+        { label: "404", href: "/404" },
     ];
 
     return (
