@@ -5,8 +5,12 @@ import Recommend from "./components/recommend";
 import bg from "@/assets/bg.jpg"
 import Timeline from "./components/Timeline";
 import { Outlet } from "react-router-dom";
+import SplitText from "@/components/bits/SplitText"
 
 const Home: FC = () => {
+    const handleAnimationComplete = () => {
+        console.log('All letters have animated!');
+    };
     return (
         <div className="select-none">
             <Outlet />
@@ -21,10 +25,34 @@ const Home: FC = () => {
                     ></div>
                     {/* 文字描述层 */}
                     <div className="absolute top-8 left-8 text-white p-4 rounded-lg max-w-[90%] md:max-w-[60%]">
-                        <h2 className="text-xl md:text-2xl font-bold mb-1">布罗莫火山，印度尼西亚</h2>
-                        <p className="text-sm md:text-base">
-                            Bromo, Area Gunung Bromo, Podokoyo, Kabupaten de Pasuruan, Java oriental, Indoné
-                        </p>
+                        <SplitText
+                            text="布罗莫火山，印度尼西亚"
+                            className="text-xl font-semibold text-center"
+                            delay={100}
+                            duration={0.6}
+                            ease="power3.out"
+                            splitType="chars"
+                            from={{ opacity: 0, y: 40 }}
+                            to={{ opacity: 1, y: 0 }}
+                            threshold={0.1}
+                            rootMargin="-100px"
+                            textAlign="center"
+                            onLetterAnimationComplete={handleAnimationComplete}
+                        />
+                        <SplitText
+                            text="Bromo, Area Gunung Bromo, Podokoyo, Kabupaten de Pasuruan, Java oriental, Indoné"
+                            className="text-xl font-semibold text-center"
+                            delay={100}
+                            duration={0.6}
+                            ease="power3.out"
+                            splitType="chars"
+                            from={{ opacity: 0, y: 40 }}
+                            to={{ opacity: 1, y: 0 }}
+                            threshold={0.1}
+                            rootMargin="-100px"
+                            textAlign="center"
+                            onLetterAnimationComplete={handleAnimationComplete}
+                        />
                     </div>
                 </div>
             </div>
@@ -41,7 +69,7 @@ const Home: FC = () => {
                 </div>
             </div>
             {/* 时间线 */}
-            <div className="relative z-10 w-full bg-Timeline pb-10 pl-18 pr-18">
+            <div className="relative z-10 w-full bg-Timeline pb-10 pl-18 pr-18 mb-5">
                 <Timeline />
             </div>
         </div>
