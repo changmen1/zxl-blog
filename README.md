@@ -17,10 +17,15 @@
 <!-- 
 react-bits（DavidHDev/react-bits）
 集成 80+ 动画组件：文本动效、背景动画、交互效果等 
+可以用来展示logo Ascii Text || Gradient Text
+404页面展示文字动画  Fuzzy Text
+来回交互文字动画 Scroll Velocity
+动画文字可以用来展示编码时间 Rotating Text
 动态卡片 Tilted Card 
 3D立体动态卡片 Profile Card
 相册浏览 Masonry
 左右滑动相册组 Circular Gallery
+超好看的照片 Chroma Grid
 下拉动画 Lanyard
 动态3D菜单 Dock
 特效菜单 Gooey Nav

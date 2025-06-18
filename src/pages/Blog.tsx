@@ -2,55 +2,9 @@ import type { FC } from "react";
 
 const Blog: FC = () => {
     return (
-        <>
-            <h1>第一</h1>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-            <div>博客</div>
-        </>
+        <div className="pt-10">
+            这里是小主的自传编写 还在努力编写中~~~~~~~~~~~~~~~~~~~~~~~~
+        </div>
     )
 }
 

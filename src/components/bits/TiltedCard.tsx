@@ -37,7 +37,6 @@ const springValues: SpringOptions = {
 export default function TiltedCard({
     imageSrc,
     altText = "宁波",
-    captionText = "去过的城市",
     containerHeight = "200px",
     containerWidth = "100%",
     imageHeight = "200px",
@@ -129,13 +128,13 @@ export default function TiltedCard({
                 <motion.img
                     src={imageSrc}
                     alt={altText}
-                    className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
+                    className="absolute top-0 left-0 object-cover rounded-[7px] will-change-transform [transform:translateZ(0)]"
                     style={{
                         width: imageWidth,
                         height: imageHeight,
                     }}
                 />
-
+                {/* 图片上的文字 */}
                 {displayOverlayContent && overlayContent && (
                     <motion.div
                         className="absolute top-0 left-20 z-[2] will-change-transform [transform:translateZ(30px)]"
@@ -145,9 +144,10 @@ export default function TiltedCard({
                 )}
             </motion.div>
 
+            {/* 提示文字 */}
             {showTooltip && (
                 <motion.figcaption
-                    className="pointer-events-none absolute left-0 top-0 rounded-[4px] bg-white px-[10px] py-[4px] text-[10px] text-[#2d2d2d] opacity-0 z-[3] hidden sm:block"
+                    className="pointer-events-none absolute left-0 top-0 rounded-[20px] bg-white px-[10px] py-[4px] text-[10px] text-[#2d2d2d] opacity-0 z-[3] hidden sm:block"
                     style={{
                         x,
                         y,
@@ -155,7 +155,7 @@ export default function TiltedCard({
                         rotate: rotateFigcaption,
                     }}
                 >
-                    {captionText}
+                    {altText}
                 </motion.figcaption>
             )}
         </figure>

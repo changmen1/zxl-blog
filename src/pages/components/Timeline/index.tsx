@@ -1,7 +1,8 @@
-// 卡片时间线
+// TODO 卡片时间线 时间线还未解决
 import { useRef, useState, useEffect } from 'react';
-import qf from "@/assets/Timeline/qf.jpg"
 import TiltedCard from '@/components/bits/TiltedCard';
+import qf from "@/assets/Timeline/qf.jpg"
+import nb from "@/assets/Timeline/nb.jpg"
 
 const Timeline = () => {
     const cardARef = useRef<HTMLDivElement>(null);
@@ -13,9 +14,9 @@ const Timeline = () => {
 
     const cardData = Array.from({ length: 20 }, (_, i) => ({
         id: i,
-        imageSrc: "https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58",
-        altText: `宁波 ${i + 1}`,
-        captionText: `宁波 ${i + 1}`,
+        imageSrc: nb,
+        altText: `海晏北路`,
+        captionText: `宁波`,
     }));
 
     /**时间线组件 测试阶段 */
@@ -116,7 +117,7 @@ const Timeline = () => {
 
     return (
         <>
-            <div className="relative bg-Timeline grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+            <div className="relative bg-Timeline grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
                 {cardData.map((item) => (
                     <TiltedCard
                         key={item.id}
@@ -126,7 +127,7 @@ const Timeline = () => {
                         containerHeight="100px"
                         containerWidth="200px"
                         imageHeight="100px"
-                        imageWidth="220px"
+                        imageWidth="200px"
                         rotateAmplitude={12}
                         scaleOnHover={1.2}
                         showMobileWarning={false}
@@ -140,7 +141,7 @@ const Timeline = () => {
                     />
                 ))}
             </div>
-            <Text />
+            {/* <Text /> */}
         </>
     );
 };

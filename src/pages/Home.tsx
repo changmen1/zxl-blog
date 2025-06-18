@@ -69,7 +69,7 @@ const Home: FC = () => {
                 </div>
             </div>
             {/* 时间线 */}
-            <div className="relative z-10 w-full bg-Timeline pb-10 pl-18 pr-18 mb-5">
+            <div className="relative z-10 w-full bg-Timeline pb-10 pt-10 pl-18 pr-18 mb-5">
                 <Timeline />
             </div>
         </div>
