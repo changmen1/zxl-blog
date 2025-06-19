@@ -60,7 +60,19 @@ const Landscape: FC = () => {
         },
         {
             id: "10",
-            img: "https://picsum.photos/id/1090/600/800?grayscale",
+            img: "https://picsum.photos/id/1010/600/800?grayscale",
+            url: "https://example.com/ten",
+            height: 500,
+        },
+        {
+            id: "11",
+            img: "https://picsum.photos/id/1009/600/800?grayscale",
+            url: "https://example.com/ten",
+            height: 500,
+        },
+        {
+            id: "12",
+            img: "https://picsum.photos/id/10008/600/800?grayscale",
             url: "https://example.com/ten",
             height: 500,
         },
