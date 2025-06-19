@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react"
+import useHisStore from '@/store/index';
 
 type Theme = "dark" | "light" | "system"
 
@@ -29,7 +30,7 @@ export function ThemeProvider({
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
-
+  const handleSetTheme = useHisStore((state) => state.setTheme);
   useEffect(() => {
     const root = window.document.documentElement
 
@@ -51,6 +52,8 @@ export function ThemeProvider({
   const value = {
     theme,
     setTheme: (theme: Theme) => {
+      // TODO 添加系统全局主题变量
+      handleSetTheme(theme)
       localStorage.setItem(storageKey, theme)
       setTheme(theme)
     },
