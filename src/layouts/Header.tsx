@@ -1,4 +1,5 @@
 import GooeyNav from "@/components/bits/GooeyNav";
+import TrueFocus from "@/components/bits/TrueFocus";
 import { type FC } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +23,14 @@ const Header: FC = () => {
         <>
             {/* 顶部导航栏固定 */}
             <header className="fixed top-0 right-0 left-0 z-20 flex h-12 items-center justify-between border-b bg-customGray px-3 py-2 shadow-sm">
-                <div className="text-xl font-bold text-headerColor cursor-pointer" onClick={() => handlePath('/')}>Zxl Blog</div>
+                <TrueFocus
+                    sentence="Zxl Blog"
+                    manualMode={false}
+                    blurAmount={5}
+                    borderColor="red"
+                    animationDuration={2}
+                    pauseBetweenAnimations={1}
+                />
                 <GooeyNav
                     items={items}
                     particleCount={15}
