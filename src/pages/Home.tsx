@@ -2,7 +2,8 @@ import type { FC } from "react";
 import Article from "./components/article";
 import Dreams from "./components/Dreams";
 import Recommend from "./components/recommend";
-import bg from "@/assets/bg.jpg"
+// import bg from "@/assets/bg/pexels-anh-nguyen.jpg"
+import bg from "@/assets/bg/gugong2.jpg"
 import Timeline from "./components/Timeline";
 import { Outlet } from "react-router-dom";
 import SplitText from "@/components/bits/SplitText"
@@ -27,7 +28,8 @@ const Home: FC = () => {
                     {/* 文字描述层 */}
                     <div className="absolute top-8 left-8 text-white p-4 rounded-lg max-w-[90%] md:max-w-[60%]">
                         <SplitText
-                            text="布罗莫火山，印度尼西亚"
+                            // text="布罗莫火山，印度尼西亚"
+                            text="中华人民共和国万岁，世界人民大团结万岁"
                             className="text-xl font-semibold text-center"
                             delay={100}
                             duration={0.6}
@@ -42,7 +44,8 @@ const Home: FC = () => {
                         />
                         <br />
                         <SplitText
-                            text="Bromo, Area Gunung Bromo, Podokoyo, Kabupaten de Pasuruan, Java oriental, Indoné"
+                            // text="Bromo, Area Gunung Bromo, Podokoyo, Kabupaten de Pasuruan, Java oriental, Indoné"
+                            text="Long live the People's Republic of China, long live the great unity of the people of the world"
                             className="text-xl font-semibold text-center"
                             delay={100}
                             duration={0.6}
