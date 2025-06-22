@@ -327,7 +327,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
                                 <NavLink
                                     to={item.href}
                                     onKeyDown={(e) => handleKeyDown(e, index, item.href)}
-                                    className="outline-none"
+                                    className="outline-none text-customGrayCl "
                                 >
                                     {item.label}
                                 </NavLink>

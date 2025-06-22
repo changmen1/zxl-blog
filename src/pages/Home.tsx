@@ -6,6 +6,7 @@ import bg from "@/assets/bg.jpg"
 import Timeline from "./components/Timeline";
 import { Outlet } from "react-router-dom";
 import SplitText from "@/components/bits/SplitText"
+import WaveHeader from "@/components/demo/WaveHeader";
 
 const Home: FC = () => {
     const handleAnimationComplete = () => {
@@ -39,6 +40,7 @@ const Home: FC = () => {
                             textAlign="center"
                             onLetterAnimationComplete={handleAnimationComplete}
                         />
+                        <br />
                         <SplitText
                             text="Bromo, Area Gunung Bromo, Podokoyo, Kabupaten de Pasuruan, Java oriental, Indoné"
                             className="text-xl font-semibold text-center"
@@ -58,6 +60,7 @@ const Home: FC = () => {
             </div>
             {/* 文章 */}
             <div className="relative z-10 w-full bg-main p-5 flex justify-between gap-4 pb-10 pl-18 pr-18">
+                <WaveHeader />
                 <div className="flex-1 basis-1/3">
                     <Article />
                 </div>
@@ -69,7 +72,7 @@ const Home: FC = () => {
                 </div>
             </div>
             {/* 时间线 */}
-            <div className="relative z-10 w-full bg-Timeline pb-10 pt-10 pl-18 pr-18 mb-5">
+            <div className="relative z-10 w-full bg-Timeline pb-10 pt-10 pl-18 pr-18">
                 <Timeline />
             </div>
         </div>
