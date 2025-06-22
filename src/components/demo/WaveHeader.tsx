@@ -3,7 +3,7 @@ import "./WaveAnimation.css"; // 👈 引入关键帧动画样式
 
 const WaveHeader: React.FC = () => {
     return (
-        <div className="absolute top-[-130px] left-0 w-full z-10">
+        <div className="absolute top-[-125px] left-0 w-full z-10">
             <div>
                 <svg
                     className="relative w-full h-[15vh] min-h-[100px] max-h-[150px] -mb-[7px]"
