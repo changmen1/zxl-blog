@@ -52,7 +52,7 @@ export default function WakaLanguageStats() {
         <div className="text-sm">
             {languages.length > 0 ? (
                 <div className='flex text-[8px]'>
-                    <div className='flex mr-10'>
+                    <div className='flex mr-10 items-center'>
                         <p className="font-medium text-EditorTl">今日开发环境:</p>
                         <ul className="list-disc ml-4 flex">
                             {editors.map((editor) => {
@@ -72,7 +72,7 @@ export default function WakaLanguageStats() {
                             })}
                         </ul>
                     </div>
-                    <div className='flex'>
+                    <div className='flex items-center'>
                         <p className="font-medium text-EditorTl">今日语言使用分布:</p>
                         <ul className="list-disc ml-4 flex">
                             {languages.map((language) => (
