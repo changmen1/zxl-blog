@@ -7,7 +7,7 @@ const Dreams: FC = () => {
     return (
         <main className="flex flex-col items-start w-full">
             <div className="border-l-4 border-l-bl pl-2 mb-2.5">
-                <h1 className="font-ZCOOL text-2xl">梦境</h1>
+                <h1 className="font-ZCOOL text-xl">梦境</h1>
                 <div className="font-YWZCOOL">Dreams</div>
             </div>
             <div className="group relative mb-3 h-[80px] w-full cursor-pointer overflow-hidden rounded-l-lg  hover:text-red-100 ">

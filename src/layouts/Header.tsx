@@ -44,12 +44,26 @@ const Header: FC = () => {
             </header>
             {/* 标题栏固定在导航下方 */}
             <div className="fixed top-12 right-0 left-0 z-20 flex h-20 items-center bg-headerColorF justify-between border-b px-3 py-2">
-                <span className="font-NotoSansTC text-2xl cursor-pointer hover:text-blue-500 text-mysidebar" onClick={() => handlePath('/article')}>文章</span>
-                <span className="font-NotoSansTC text-2xl cursor-pointer hover:text-blue-500 text-mysidebar" onClick={() => handlePath('/landscape')}>风景</span>
-                <span className="font-NotoSansTC text-2xl cursor-pointer hover:text-blue-500 text-mysidebar">美食</span>
-                <span className="font-NotoSansTC text-2xl cursor-pointer hover:text-blue-500 text-mysidebar">影视</span>
-                <span className="font-NotoSansTC text-2xl cursor-pointer hover:text-blue-500 text-mysidebar">音乐</span>
-                <span className="font-NotoSansTC text-2xl cursor-pointer hover:text-blue-500 text-mysidebar">梦境</span>
+                <div className="cursor-pointer hover:text-blue-500 text-center" onClick={() => handlePath('/')}>
+                    <h1 className="font-ZCOOL text-2xl">初遇</h1>
+                    <div className="font-YWZCOOL">First Encounter</div>
+                </div>
+                <div className="cursor-pointer hover:text-blue-500 text-center" onClick={() => handlePath('/article')}>
+                    <h1 className="font-ZCOOL text-2xl">文章</h1>
+                    <div className="font-YWZCOOL">article</div>
+                </div>
+                <div className="cursor-pointer hover:text-blue-500 text-center" onClick={() => handlePath('/landscape')}>
+                    <h1 className="font-ZCOOL text-2xl">风景</h1>
+                    <div className="font-YWZCOOL">landscape</div>
+                </div>
+                <div className="cursor-pointer hover:text-blue-500 text-center">
+                    <h1 className="font-ZCOOL text-2xl">美食</h1>
+                    <div className="font-YWZCOOL">gourmet food</div>
+                </div>
+                <div className="cursor-pointer hover:text-blue-500 text-center">
+                    <h1 className="font-ZCOOL text-2xl">梦境</h1>
+                    <div className="font-YWZCOOL">Dreams</div>
+                </div>
             </div>
         </>
     );
