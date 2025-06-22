@@ -90,7 +90,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
                     <span
                         key={index}
                         ref={(el: any) => (wordRefs.current[index] = el)}
-                        className="relative font-black cursor-pointer text-headerColor"
+                        className="relative font-black cursor-pointer text-customGrayCl"
                         onClick={() => handlePath('/')}
                         style={{
                             filter: manualMode

@@ -204,7 +204,7 @@ const Error: React.FC<FuzzyTextProps> = ({
         hoverIntensity,
     ]);
 
-    return <canvas ref={canvasRef} />;
+    return  <canvas ref={canvasRef} />;
 };
 
 export default Error;
