@@ -7,6 +7,7 @@ import Landscape from "@/pages/Landscape/Landscape"
 import { motion } from "motion/react"
 import NotFound from "@/pages/NotFound"
 import Cv from "@/pages/Cv"
+import RentalSubsidy from "@/pages/rentalSubsidy"
 
 // 切换动画
 const PageWrapper = ({ children }: { children: React.ReactNode }) => (
@@ -59,6 +60,11 @@ export const router = createBrowserRouter([
                 // 风景
                 path: "landscape",
                 element: <PageWrapper><Landscape /></PageWrapper>,
+            },
+            {
+                // 租房合同
+                path: "rentalSubsidy",
+                element: <PageWrapper><RentalSubsidy /></PageWrapper>,
             },
             {
                 // 404

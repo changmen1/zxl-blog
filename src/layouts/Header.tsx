@@ -16,6 +16,7 @@ const Header: FC = () => {
         { label: "主页", href: "/" },
         { label: "自传", href: "/blog" },
         { label: "简历", href: "/cv" },
+        { label: "租房合同", href: "/rentalSubsidy" },
         { label: "404", href: "/404" },
     ];
 
