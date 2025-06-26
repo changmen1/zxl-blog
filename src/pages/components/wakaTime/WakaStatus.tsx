@@ -30,7 +30,7 @@ export default function WakaLanguageStats() {
             const today = new Date().toISOString().slice(0, 10);
             const res = await fetch(`/wakatime/users/current/summaries?start=${today}&end=${today}`);
             const json = await res.json();
-            console.log(">>>json", json)
+            // console.log(">>>json", json)
             const editorStats: EditorStat[] = json.data?.[0]?.editors || [];
             setEditors(editorStats);
             const languageStats: LanguageStat[] = json.data?.[0]?.languages || [];
