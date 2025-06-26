@@ -9,7 +9,7 @@ interface TrackOptions {
 }
 
 /**
- * 页面访问埋点 Hook
+ * ! 页面访问埋点 Hook
  */
 const usePageTracking = (options?: TrackOptions) => {
     const location = useLocation();
@@ -53,16 +53,17 @@ const usePageTracking = (options?: TrackOptions) => {
 
 /**
  * 
- * 事件成功埋点-当前时间点
+ * ! 事件成功埋点-当前时间点
  * @param env 事件
  */
 const useLoadingComplete = (env: string) => {
     /**当前时间 */
     const date = dayjs(Date.now()).format('YYYY-MM-DD HH:mm:ss')
     console.log(
-        `%cINFO%c  ${env} ${date}`,
+        `%cINFO%c${env}%c${date}`,
+        'color: white; background: green; padding: 2px 6px; border-radius: 4px;font-size:20px;margin-right:10px',
+        'color: white; background: green; padding: 2px 6px; border-radius: 4px;font-size:20px;margin-right:10px',
         'color: white; background: green; padding: 2px 6px; border-radius: 4px;font-size:20px',
-        'color: #ffffff;font-size:20px',
     );
 }
 
@@ -76,23 +77,28 @@ const useInit = () => {
     const data = [
         { name: "useInit", value: "初始化加载" },
         { name: "useLoadingComplete", value: "记录特定事件埋点" },
-        { name: "usePageTracking", value: "页面访问埋点" }
+        { name: "usePageTracking", value: "页面访问埋点" },
+        { name: "useFingerprintJS", value: "浏览器指纹" }
     ];
     /**
      * 源码地址
      */
-    const github = 'https://github.com/changmen1/zxl-blog'
+    const github = 'https://github.com/changmen1'
+    const githubProject = 'https://github.com/changmen1/zxl-blog'
     console.log(
-        `%c源码地址:${github}`,
+        `%c我的github地址:${github}`,
         'color: white; background: blue; padding: 2px 6px; border-radius: 4px;font-size:20px'
     );
     console.log(
-        `%c项目埋点`,
+        `%c源码地址:${githubProject}`,
+        'color: white; background: blue; padding: 2px 6px; border-radius: 4px;font-size:20px'
+    );
+    console.log(
+        `%c项目埋点信息梳理`,
         'color: black; background: pink; padding: 2px 6px; border-radius: 4px;font-size:20px'
     );
     const display = data.map(item => ({ 埋点名称: item.name, 描述: item.value }));
     console.table(display);
-    console.log('%c======================TODO 埋点信息上报记录======================', 'color: yellow; font-weight: bold;font-size:20px')
 }
 
 export { usePageTracking, useLoadingComplete, useInit };
