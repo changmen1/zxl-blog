@@ -8,9 +8,9 @@ import useFingerprintJS from './hooks/use-fingerprintJS.ts'
 // import SplashCursor from './components/bits/Move.tsx'
 
 useLoadingComplete('ZxlBlog程序初始化加载完成!')
+// console.log("%c ", "background: url(http://p79mwfmry.bkt.clouddn.com/logo50.jpg) no-repeat center;padding-left:80px;padding-bottom: 80px;border-radius:50%;")
 useFingerprintJS()
 useInit()
-
 createRoot(document.getElementById('zxl')!).render(
   // TODO 关闭颜色模式
   // <StrictMode>
