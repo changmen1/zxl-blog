@@ -36,7 +36,7 @@ const Cv: FC = () => {
                     speed={0.5}
                 />
                 这里是小主的简历 还在努力编写中~~~~~~~~~~~~~~~~~~~~~~~~
-                <div dangerouslySetInnerHTML={{ __html: htmlContent }} className="w-[210px]" />
+                <div dangerouslySetInnerHTML={{ __html: htmlContent }} className="w-[230px]" />
             </div>
         </>
     )
