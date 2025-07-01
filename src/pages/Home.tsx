@@ -3,7 +3,7 @@ import Article from "./components/article";
 import Dreams from "./components/Dreams";
 import Recommend from "./components/recommend";
 // import bg from "@/assets/bg/gugong2.jpg"
-import bg from "@/assets/mp4/周星驰大话西游.mp4"
+import bg from "@/assets/mp4/周星驰功夫.mp4"
 import { dhxy2 } from "@/assets/Quotes";
 import { dhxy2USA } from "@/assets/Quotes";
 import Timeline from "./components/Timeline";
