@@ -14,6 +14,18 @@
 
 ---
 
+## git push遇大文件报错解决
+
+```bash
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch 'src/assets/mp4/周星驰大话西游.mp4'" --prune-empty --tag-name-filter cat -- --all
+```
+
+## 强制推送
+
+```bash
+git push origin --force
+```
+
 <!-- 
 react-bits（DavidHDev/react-bits）
 集成 80+ 动画组件：文本动效、背景动画、交互效果等 
