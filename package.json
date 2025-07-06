@@ -16,6 +16,7 @@
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.7",
+    "@rc-component/progress": "^1.0.1",
     "@tailwindcss/vite": "^4.1.10",
     "animejs": "^4.0.2",
     "class-variance-authority": "^0.7.1",
@@ -31,6 +32,7 @@
     "react-router-dom": "^7.6.2",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.10",
+    "vaul": "^1.1.2",
     "zustand": "^5.0.5"
   },
   "devDependencies": {
