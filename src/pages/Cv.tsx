@@ -8,7 +8,6 @@ const Cv: FC = () => {
 
     const [htmlContent, setHtmlContent] = useState('');
 
-
     useEffect(() => {
         // TODO 加载ASCII文件
         fetch('/src/pages/ASCII.txt')
