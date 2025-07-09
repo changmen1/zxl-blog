@@ -86,7 +86,7 @@ const useInit = () => {
     const github = 'https://github.com/changmen1'
     const githubProject = 'https://github.com/changmen1/zxl-blog'
     console.log(
-        `%c我的github地址:${github}`,
+        `%cgithub地址:${github}`,
         'color: white; background: blue; padding: 2px 6px; border-radius: 4px;font-size:20px'
     );
     console.log(
@@ -100,7 +100,7 @@ const useInit = () => {
     const display = data.map(item => ({ 埋点名称: item.name, 描述: item.value }));
     console.table(display);
     console.log(
-        `                                                                      %c作者`,
+        `                                                                      %c下面请欣赏小主英俊帅气的脸庞哈哈`,
         'color: black; background: pink; padding: 2px 6px; border-radius: 4px;font-size:20px'
     );
     // auther
@@ -169,7 +169,7 @@ J7^~~?B&&&&&&&##B5JYP###B################################&&&&&####BBB###########
 Y##&&&&&&&&####&#######&&&&&&&###BBBBBBBBBBBBBBBBBBBBGGGGGGGGBB#######################BBGGBBBBBBGGGG
 ##&&&&&&&&###############&&&&&&####BBBBBBBBBBGGGGGGGGGPPGGGBBB########################BBGBBBBBBGGGGG
 #&&&&&&&&&################&&&&&&&##B##BBGGGGGGGGGGGGGPPGGGBBBB#######################BBBBBBBBBGGGGGB
-    `, 'font-family: monospace; font-size: 20px; line-height: 20px;color:green'
+    `, 'font-family: monospace; font-size: 10px;color: lime; background: black;'
     )
 }
 

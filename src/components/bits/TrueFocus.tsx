@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import chinaFlag from '@/assets/bg/china.svg';
+import Reward from "@/pages/components/reward";
 
 interface TrueFocusProps {
     sentence?: string;
@@ -161,6 +162,8 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
                 <img src={chinaFlag} alt="China Flag" className="w-8 h-5 mr-2" />
                 <div>爱我中华</div>
             </div>
+            {/* !賞 */}
+            <Reward />
         </div>
     );
 };

@@ -2,8 +2,10 @@ import type { FC } from "react";
 import Article from "./components/article";
 import Dreams from "./components/Dreams";
 import Recommend from "./components/recommend";
-// import bg from "@/assets/bg/pexels-anh-nguyen.jpg"
-import bg from "@/assets/bg/gugong2.jpg"
+// import bg from "@/assets/bg/gugong2.jpg"
+import bg from "@/assets/mp4/周星驰功夫.mp4"
+import { dhxy2 } from "@/assets/Quotes";
+import { dhxy2USA } from "@/assets/Quotes";
 import Timeline from "./components/Timeline";
 import { Outlet } from "react-router-dom";
 import SplitText from "@/components/bits/SplitText"
@@ -19,17 +21,28 @@ const Home: FC = () => {
             {/* 背景 */}
             <div className="mt-[-50px] h-[100vh] md:mt-0 md:h-[41.8vw]">
                 <div className="fixed h-[100vh] w-full md:h-[41.8vw]">
-                    <div
+                    {/* 图片背景 */}
+                    {/* <div
                         className="h-full w-full bg-cover bg-center bg-no-repeat transition-all duration-200"
                         style={{
                             backgroundImage: `url(${bg})`,
                         }}
-                    ></div>
+                    ></div> */}
+                    {/* 视频背景 */}
+                    <div className="relative w-full h-full">
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            src={bg}
+                            className="absolute top-0 left-0 w-full h-full object-cover"
+                        />
+                    </div>
                     {/* 文字描述层 */}
                     <div className="absolute top-8 left-8 text-white p-4 rounded-lg max-w-[90%] md:max-w-[60%]">
                         <SplitText
-                            // text="布罗莫火山，印度尼西亚"
-                            text="中华人民共和国万岁，世界人民大团结万岁"
+                            text={dhxy2}
                             className="text-xl font-semibold text-center"
                             delay={100}
                             duration={0.6}
@@ -44,8 +57,7 @@ const Home: FC = () => {
                         />
                         <br />
                         <SplitText
-                            // text="Bromo, Area Gunung Bromo, Podokoyo, Kabupaten de Pasuruan, Java oriental, Indoné"
-                            text="Long live the People's Republic of China, long live the great unity of the people of the world"
+                            text={dhxy2USA}
                             className="text-xl font-semibold text-center"
                             delay={100}
                             duration={0.6}
