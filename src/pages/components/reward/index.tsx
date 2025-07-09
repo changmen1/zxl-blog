@@ -34,7 +34,10 @@ const Reward: FC = () => {
     return (
         <Drawer>
             <DrawerTrigger asChild>
-                <img src={_S} alt="China Flag" className="w-8 h-5 mr-2" />
+                {/* className="w-8 h-8 animate-heartbeat" */}
+                <div className="w-10 h-7 animate-heartbeat cursor-pointer">
+                    <img src={_S} alt="China Flag" className="w-10 h-7 mr-2 " />
+                </div>
             </DrawerTrigger>
             {/* className="bg-[#f472b6]" */}
             <DrawerContent>

@@ -1,9 +1,11 @@
 // TODO 文章组件
 import type { FC } from "react";
 import title from "@/assets/article/title.jpg"
+import { useNavigate } from "react-router-dom";
 
 
 const Article: FC = () => {
+    const navigate = useNavigate();
     return (
         <main className="flex flex-col items-start w-full">
             <div className="border-l-4 border-l-bl pl-2 mb-2.5">
@@ -29,7 +31,9 @@ const Article: FC = () => {
                     <div className=" bg-red-500 px-2 py-0.5 font-bold text-sm">
                         55 °C
                     </div>
-                    <div className="mb-[6.5px] flex flex-col items-end text-right">
+                    <div className="mb-[6.5px] flex flex-col items-end text-right" onClick={() => {
+                        navigate('/article/details');
+                    }}>
                         <div className="mb-1 text-lg leading-tight md:text-base">
                             时间之河与本我的航程
                         </div>

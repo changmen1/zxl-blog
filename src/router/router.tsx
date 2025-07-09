@@ -8,6 +8,7 @@ import { motion } from "motion/react"
 import NotFound from "@/pages/NotFound"
 import Cv from "@/pages/Cv"
 import RentalSubsidy from "@/pages/rentalSubsidy"
+import ArticleDeatils from "@/pages/Article/components/Details."
 
 // 切换动画
 const PageWrapper = ({ children }: { children: React.ReactNode }) => (
@@ -23,7 +24,7 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => (
         {children}
     </motion.div>
 )
-
+//TODO 新增页面添加 className="pt-10"
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -53,8 +54,18 @@ export const router = createBrowserRouter([
             },
             {
                 // 文章
-                path: "article",
-                element: <PageWrapper><Article /></PageWrapper>,
+                path: "/article",
+                children: [
+                    {
+                        path: "/article",
+                        element: <PageWrapper><Article /></PageWrapper>,
+                    },
+                    {
+                        // 文章詳情
+                        path: "/article/details",
+                        element: <PageWrapper><ArticleDeatils /></PageWrapper>,
+                    },
+                ]
             },
             {
                 // 风景
@@ -73,4 +84,15 @@ export const router = createBrowserRouter([
             },
         ],
     },
+    // {
+    //     // 文章
+    //     path: "/wenzhang",
+    //     children: [
+    //         {
+    //             // 文章詳情
+    //             path: "/wenzhang/details",
+    //             element: <ArticleDeatils />,
+    //         },
+    //     ]
+    // },
 ])
