@@ -1,3 +1,10 @@
+/*
+ * Author: zxl
+ * Created on Thu Jul 10 2025
+ * 个人博客 - 1.0
+ * Copyright (c) 2025 Dv
+ */
+
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";

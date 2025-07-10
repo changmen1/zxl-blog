@@ -1,3 +1,10 @@
+/*
+ * Author: zxl
+ * Created on Thu Jul 10 2025
+ * 个人博客 - 1.0
+ * Copyright (c) 2025 Dv
+ */
+
 import GooeyNav from "@/components/bits/GooeyNav";
 import TrueFocus from "@/components/bits/TrueFocus";
 import { type FC } from "react";

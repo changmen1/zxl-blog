@@ -12,6 +12,7 @@ const DefaultLayout: FC = () => {
             <SidebarProvider>
                 <SidebarInset>
                     <Header />
+                    {/* 49 */}
                     <main className="flex-1 bg-main mt-[100px]">
                         <AnimatePresence mode="wait">
                             <Outlet key={location.pathname} />

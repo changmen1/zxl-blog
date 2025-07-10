@@ -19,7 +19,7 @@ const Home: FC = () => {
         <div className="select-none">
             <Outlet />
             {/* 背景 */}
-            <div className="mt-[-50px] h-[100vh] md:mt-0 md:h-[41.8vw]">
+            <div className="mt-[-30px] h-[100vh] md:mt-0 md:h-[41.8vw]">
                 <div className="fixed h-[100vh] w-full md:h-[41.8vw]">
                     {/* 图片背景 */}
                     {/* <div

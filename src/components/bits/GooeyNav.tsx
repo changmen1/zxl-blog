@@ -333,15 +333,9 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
                   }`}
                 onClick={(e) => handleClick(e, index, item.href)}
               >
-                {/* <NavLink
-                        to={item.href}
-                        // onKeyDown={(e) => handleKeyDown(e, index, item.href)}
-                        className="outline-none text-customGrayCl "
-                    > */}
                 <p className="text-customGrayCl">
                   {item.label}
                 </p>
-                {/* </NavLink> */}
               </li>
             ))}
           </ul>

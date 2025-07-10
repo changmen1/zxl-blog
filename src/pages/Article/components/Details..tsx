@@ -1,3 +1,10 @@
+/*
+ * Author: zxl
+ * Created on Thu Jul 10 2025
+ * 个人博客 - 1.0
+ * Copyright (c) 2025 Dv
+ */
+
 import type { FC } from "react";
 import bg from "@/assets/ArticleDeatils/wzbg.jpg"
 import Reward from "@/pages/components/reward";
@@ -64,7 +71,7 @@ const ArticleDeatils: FC = () => {
                         </ul>
                     </div>
                     {/* TODO -------------文章内容----------------  */}
-                    <div className="mb-5 bg-white pt-1.5 font-extralight">
+                    <div className="mb-5 bg-white text-black pt-1.5 font-extralight">
                         <h3 className="bg-[#747bc2] mt-[-10px] ml-2.5 mr-2.5 p-1 text-white font-bold">★今日特價e書★</h3>
                         <div className="p-[15px]">
                             <div className="w-[280px] table-cell">
