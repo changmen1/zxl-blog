@@ -217,4 +217,11 @@
   .animate-heartbeat-fast {
     animation: heartbeat 0.5s infinite ease-in-out;
   }
+
+  /* 客服小主图片 */
+  .bg-local-banner {
+    background-image: url('/src//assets//zxlXz.png');
+    background-size: cover;
+    background-position: center;
+  }
 }
