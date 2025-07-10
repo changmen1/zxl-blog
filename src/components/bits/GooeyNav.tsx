@@ -139,23 +139,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
       makeParticles(filterRef.current);
     }
   };
-  // const handleKeyDown = (
-  //     e: React.KeyboardEvent<HTMLAnchorElement>,
-  //     index: number,
-  //     path: string
-  // ) => {
-  //     if (e.key === "Enter" || e.key === " ") {
-  //         e.preventDefault();
-  //         const liEl = e.currentTarget.parentElement;
-  //         if (liEl) {
-  //             handleClick(
-  //                 { currentTarget: liEl } as React.MouseEvent<HTMLLIElement>,
-  //                 index,
-  //                 path
-  //             );
-  //         }
-  //     }
-  // };
+
   useEffect(() => {
     if (!navRef.current || !containerRef.current) return;
     const activeLi = navRef.current.querySelectorAll("li")[

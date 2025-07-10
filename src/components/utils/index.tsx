@@ -6,6 +6,7 @@
  */
 
 import { useEffect, useRef, useState, type FC } from "react";
+import fullscreen from "@/assets/fullscreen.png"
 
 const Utils: FC = () => {
     const [visible, setVisible] = useState(false);
@@ -40,6 +41,20 @@ const Utils: FC = () => {
         setIsDragging(true)
     }
 
+    // TODO 全屏
+    const toggleFullScreen = () => {
+        let doc: any = window.document;
+        let docEl: any = doc.documentElement;
+        let requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+        let cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+        if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+            requestFullScreen.call(docEl);
+        }
+        else {
+            cancelFullScreen.call(doc);
+        }
+    }
+
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
             if (!isDragging) return
@@ -65,7 +80,7 @@ const Utils: FC = () => {
         <div
             ref={dragRef}
             onMouseDown={handleMouseDown}
-            className='fixed z-50 cursor-move h-[182px] bg-[#747bc2] p-2 rounded-[12px]'
+            className='fixed z-50 cursor-move h-[240px] bg-[#747bc2] p-2 rounded-[12px]'
             style={{
                 position: 'fixed',
                 left: `${position.x}px`,
@@ -80,6 +95,12 @@ const Utils: FC = () => {
             >
                 <span>🎵</span>
                 <span className='text-[15px]'>音乐</span>
+            </div>
+            {/* TODO 全屏 */}
+            <div
+                className='cursor-pointer w-[50px] h-[50px] mb-2 flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'
+            >
+                <input type="image" src={fullscreen} width="48px" height="36px" onClick={toggleFullScreen} />
             </div>
             {/* TODO 回到顶部 */}
             {visible && (
