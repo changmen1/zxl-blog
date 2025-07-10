@@ -1,11 +1,20 @@
-import { useEffect, useState, type FC } from "react";
+import { useEffect, useRef, useState, type FC } from "react";
 
 
 const Utils: FC = () => {
     const [visible, setVisible] = useState(false);
+    const dragRef = useRef<HTMLDivElement | null>(null)
+    const [position, setPosition] = useState(() => ({
+        x: window.innerWidth - 60 - 25, // 60按钮宽度，25右边距
+        y: window.innerHeight - 60 - 400, // 60按钮高度，400底部边距
+    }))
+    const [isDragging, setIsDragging] = useState(false)
+    const [offset, setOffset] = useState({ x: 0, y: 0 })
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
     useEffect(() => {
         const toggleVisibility = () => {
             setVisible(window.scrollY > 100); // 超过 100px 时显示按钮
@@ -14,28 +23,69 @@ const Utils: FC = () => {
         window.addEventListener('scroll', toggleVisibility);
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        const rect = dragRef.current?.getBoundingClientRect()
+        if (!rect) return
+        setOffset({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+        })
+        setIsDragging(true)
+    }
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            if (!isDragging) return
+            setPosition({
+                x: e.clientX - offset.x,
+                y: e.clientY - offset.y,
+            })
+        }
+
+        const handleMouseUp = () => {
+            setIsDragging(false)
+        }
+
+        document.addEventListener('mousemove', handleMouseMove)
+        document.addEventListener('mouseup', handleMouseUp)
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove)
+            document.removeEventListener('mouseup', handleMouseUp)
+        }
+    }, [isDragging, offset])
+
     return (
-        <>
-            {/* 回到顶部 */}
-            {
-                visible ?
-                    <div className='fixed bottom-[40px] right-[25px] z-10 cursor-pointer text-center'>
-                        <div onClick={scrollToTop} className='w-[60px] h-[60px] flex flex-col justify-center text-[#000] rounded-[12px] border border-[#ccc] bg-[rgba(175,212,98,0.7)] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'>
-                            <span>
-                                🚀
-                            </span>
-                            <span className='text-[15px] text-[#000]'>
-                                TOP
-                            </span>
-                        </div>
-                    </div> : null
-            }
-            {/* 小主 */}
-            <div className='fixed bottom-[110px] right-[25px] z-10 cursor-pointer block'>
-                <div className='bg-local-banner w-[60px] h-[60px] flex flex-col justify-center text-[#000] rounded-[12px] border border-[#ccc] bg-[rgba(175,212,98,0.7)] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'>
-                </div>
+        <div
+            ref={dragRef}
+            onMouseDown={handleMouseDown}
+            className='fixed z-50 cursor-move h-[182px] bg-[#747bc2] p-2 rounded-[12px]'
+            style={{
+                position: 'fixed',
+                left: `${position.x}px`,
+                top: `${position.y}px`,
+            }}
+        >
+            {/* TODO 小主按钮 */}
+            <div className='cursor-pointer bg-local-banner w-[50px] h-[50px] mb-2 flex flex-col justify-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'></div>
+            {/* TODO 音乐 */}
+            <div
+                className='cursor-pointer w-[50px] h-[50px] mb-2 flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'
+            >
+                <span>🎵</span>
+                <span className='text-[15px]'>音乐</span>
             </div>
-        </>
+            {/* TODO 回到顶部 */}
+            {visible && (
+                <div
+                    onClick={scrollToTop}
+                    className='cursor-pointer w-[50px] h-[50px] flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'
+                >
+                    <span>🚀</span>
+                    <span className='text-[15px]'>TOP</span>
+                </div>
+            )}
+        </div>
     )
 }
 
