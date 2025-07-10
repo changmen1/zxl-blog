@@ -1,5 +1,11 @@
-import { useEffect, useRef, useState, type FC } from "react";
+/*
+ * Author: zxl
+ * Created on Thu Jul 10 2025
+ * 个人博客 - 1.0
+ * Copyright (c) 2025 Dv
+ */
 
+import { useEffect, useRef, useState, type FC } from "react";
 
 const Utils: FC = () => {
     const [visible, setVisible] = useState(false);

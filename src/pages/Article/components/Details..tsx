@@ -6,17 +6,18 @@
  */
 
 import type { FC } from "react";
-import bg from "@/assets/ArticleDeatils/wzbg.jpg"
+import bg from "@/assets/ArticleDeatils/bg.png"
 import Reward from "@/pages/components/reward";
 
 
 const ArticleDeatils: FC = () => {
     return (
-        <div className="pt-10"
+        <div className="pt-30 bg-[#e9e9e9]"
             style={{
                 backgroundImage: `url(${bg})`,
-                backgroundAttachment: 'fixed',
                 backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center top',
+                backgroundAttachment: 'scroll'
             }}
         >
             <div className="w-[960px] block ml-auto mr-auto pb-5">
