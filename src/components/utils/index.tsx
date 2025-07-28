@@ -6,7 +6,6 @@
  */
 
 import { useEffect, useRef, useState, type FC } from "react";
-import fullscreen from "@/assets/fullscreen.png"
 
 const Utils: FC = () => {
     const [visible, setVisible] = useState(false);
@@ -21,15 +20,6 @@ const Utils: FC = () => {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
-    useEffect(() => {
-        const toggleVisibility = () => {
-            setVisible(window.scrollY > 100); // 超过 100px 时显示按钮
-        };
-
-        window.addEventListener('scroll', toggleVisibility);
-        return () => window.removeEventListener('scroll', toggleVisibility);
-    }, []);
 
     const handleMouseDown = (e: React.MouseEvent) => {
         const rect = dragRef.current?.getBoundingClientRect()
@@ -76,11 +66,20 @@ const Utils: FC = () => {
         }
     }, [isDragging, offset])
 
+    useEffect(() => {
+        const toggleVisibility = () => {
+            setVisible(window.scrollY > 100); // 超过 100px 时显示按钮
+        };
+
+        window.addEventListener('scroll', toggleVisibility);
+        return () => window.removeEventListener('scroll', toggleVisibility);
+    }, []);
+
     return (
         <div
             ref={dragRef}
             onMouseDown={handleMouseDown}
-            className='fixed z-50 cursor-move h-[240px] bg-[#747bc2] p-2 rounded-[12px]'
+            className='fixed z-50 cursor-move h-[180px] bg-toolbar p-2 rounded-[12px]'
             style={{
                 position: 'fixed',
                 left: `${position.x}px`,
@@ -88,29 +87,20 @@ const Utils: FC = () => {
             }}
         >
             {/* TODO 小主按钮 */}
-            <div className='cursor-pointer bg-local-banner w-[50px] h-[50px] mb-2 flex flex-col justify-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'></div>
+            <div className='cursor-pointer bg-local-banner w-[35px] h-[35px] mb-2 flex flex-col justify-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'></div>
             {/* TODO 音乐 */}
-            <div
-                className='cursor-pointer w-[50px] h-[50px] mb-2 flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'
-            >
-                <span>🎵</span>
-                <span className='text-[15px]'>音乐</span>
-            </div>
+            <div className='cursor-pointer bg-local-music w-[35px] h-[35px] mb-2 flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border' />
             {/* TODO 全屏 */}
             <div
-                className='cursor-pointer w-[50px] h-[50px] mb-2 flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'
-            >
-                <input type="image" src={fullscreen} width="48px" height="36px" onClick={toggleFullScreen} />
-            </div>
+                className='cursor-pointer bg-local-full-screen w-[35px] h-[35px] mb-2 flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'
+                onClick={toggleFullScreen}
+            />
             {/* TODO 回到顶部 */}
             {visible && (
                 <div
                     onClick={scrollToTop}
-                    className='cursor-pointer w-[50px] h-[50px] flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'
-                >
-                    <span>🚀</span>
-                    <span className='text-[15px]'>TOP</span>
-                </div>
+                    className='cursor-pointer bg-local-top w-[35px] h-[35px] flex flex-col justify-center items-center text-[#000] rounded-[12px] border border-[#ccc] bg-[#c7e191] shadow-[4px_4px_12px_rgba(0,0,0,0.15)] box-border'
+                />
             )}
         </div>
     )
