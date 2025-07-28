@@ -1,3 +1,11 @@
+/*
+ * Author: 💗zxl
+ * Created on Mon Jul 28 2025
+ * 宠物猫 - 1.0
+ * Copyright (c) 2025 Dv
+ * https://github.com/changmen1
+ */
+
 // import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'

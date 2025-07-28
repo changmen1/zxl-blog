@@ -249,4 +249,39 @@
     background-size: cover;
     background-position: center;
   }
+
+  /* 初遇 */
+  .bg-local-chuyu {
+    background-image: url('/src//assets/header/初遇.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* 文章 */
+  .bg-local-wenzhang {
+    background-image: url('/src//assets/header/文章.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* 风景 */
+  .bg-local-fengjing {
+    background-image: url('/src//assets/header/风景.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* 美食 */
+  .bg-local-meishi {
+    background-image: url('/src//assets/header/美食.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* 梦境 */
+  .bg-local-mengjing {
+    background-image: url('/src//assets/header/梦境.png');
+    background-size: cover;
+    background-position: center;
+  }
 }
