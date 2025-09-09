@@ -2,8 +2,8 @@ import type { FC } from "react";
 import Article from "./components/article";
 import Dreams from "./components/Dreams";
 import Recommend from "./components/recommend";
-import bg from "@/assets/bg/gugong2.jpg"
-// import bg from "@/assets/mp4/周星驰功夫.mp4"
+// import bg from "@/assets/bg/gugong2.jpg"
+import bg from "@/assets/mp4/周星驰功夫.mp4"
 import { dhxy2 } from "@/assets/Quotes";
 import { dhxy2USA } from "@/assets/Quotes";
 import Timeline from "./components/Timeline";
@@ -22,14 +22,14 @@ const Home: FC = () => {
             <div className="mt-[-30px] h-[100vh] md:mt-0 md:h-[41.8vw]">
                 <div className="fixed h-[100vh] w-full md:h-[41.8vw]">
                     {/* 图片背景 */}
-                    <div
+                    {/* <div
                         className="h-full w-full bg-cover bg-center bg-no-repeat transition-all duration-200"
                         style={{
                             backgroundImage: `url(${bg})`,
                         }}
-                    ></div>
+                    ></div> */}
                     {/* 视频背景 */}
-                    {/* <div className="relative w-full h-full">
+                    <div className="relative w-full h-full">
                         <video
                             autoPlay
                             muted
@@ -38,7 +38,7 @@ const Home: FC = () => {
                             src={bg}
                             className="absolute top-0 left-0 w-full h-full object-cover"
                         />
-                    </div> */}
+                    </div>
                     {/* 文字描述层 */}
                     <div className="absolute top-8 left-8 text-white p-4 rounded-lg max-w-[90%] md:max-w-[60%]">
                         <SplitText

@@ -71,6 +71,61 @@ const useLoadingComplete = (env: string) => {
  * ! 程序初始化
  */
 const useInit = () => {
+    // TODO ==================================缩放禁用==================================
+    const keyCodeMap: { [key: number]: boolean } = {
+        // 91: true, // command
+        61: true,
+        107: true, // 数字键盘 +
+        109: true, // 数字键盘 -
+        173: true, // 火狐 - 号
+        187: true, // +
+        189: true, // -
+    };
+    // 覆盖ctrl||command + ‘+’/‘-’
+    document.onkeydown = function (event) {
+        const e = event || window.event;
+        const ctrlKey = e.ctrlKey || e.metaKey;
+        if (ctrlKey && keyCodeMap[e.keyCode]) {
+            e.preventDefault();
+        } else if (e.detail) {
+            // Firefox
+            event.returnValue = false;
+        }
+    };
+    // 覆盖鼠标滑动
+    document.body.addEventListener(
+        'wheel',
+        (e) => {
+            if (e.ctrlKey) {
+                if (e.deltaY < 0) {
+                    e.preventDefault();
+                    return false;
+                }
+                if (e.deltaY > 0) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            return false
+        },
+        { passive: false },
+    );
+    // TODO ==================================禁用F12快捷键==================================
+    document.addEventListener('keydown', (e) => {
+        if (e.keyCode === 123) {
+            e.preventDefault();
+        }
+    })
+    // TODO ==================================禁用右键菜单==================================
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+    })
+    // TODO ==================================防止网站以 iframe 方式被加载==================================
+    if (window.location !== window.parent.location) window.parent.location = window.location as any;
+    // TODO ==================================禁止选中文字==================================
+    document.addEventListener('selectstart', (e) => {
+        e.preventDefault();
+    })
     /**
      * 埋点hooks描述表格
      */
