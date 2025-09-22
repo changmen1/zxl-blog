@@ -45,7 +45,7 @@ const Article: FC = () => {
                         {datas?.[0]?.author}
                     </div>
                     <div className="mb-[6.5px] flex flex-col items-end text-right" onClick={() => {
-                        navigate('/article/details');
+                        navigate('/article/details', { state: datas?.[0]?.id });
                     }}>
                         <div className="mb-1 text-lg leading-tight md:text-base">
                             {datas?.[0]?.title}
@@ -59,7 +59,9 @@ const Article: FC = () => {
             <ul className="w-full">
                 {
                     datas?.map(o => (
-                        <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
+                        <li key={o.id} className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center cursor-pointer" onClick={() => {
+                            navigate('/article/details', { state: o?.id, });
+                        }}>
                             <div className="flex-1 basis-2/3">
                                 <span className="text-dateCl mr-4 text-[14px] font-Audiowide">{o.author}</span>
                                 <span className="text-dateCl mr-4">/</span>

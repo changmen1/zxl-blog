@@ -8,6 +8,6 @@ import axiosInstince, { type HttpResponse } from "@/utils/request/http"
  * @param params
  * @returns
  */
-export const getBlogList = (params: { pageNum: number, pageSize: number }) => {
+export const getBlogList = (params: { pageNum?: number, pageSize?: number, id?: number }) => {
     return axiosInstince.get<HttpResponse<Article.IArticle[]>>(`/blog/list`, { params })
 }

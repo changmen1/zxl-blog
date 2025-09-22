@@ -5,7 +5,7 @@
  * Copyright (c) 2025 Dv
  */
 
-import { useState, type FC } from "react";
+import { type FC } from "react";
 import { Button } from "@/components/ui/button"
 import _S from "@/assets/shang.svg"
 import wx from "@/assets/shang/wx.png"
@@ -20,17 +20,12 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
-import { Line } from '@rc-component/progress';
-import { motion, AnimatePresence } from "framer-motion";
 
-const TOTAL = 100;
 /**
  * 
  * @returns 赏
  */
 const Reward: FC = () => {
-    const [count, setCount] = useState(0);
-    const percent = Math.min((count / TOTAL) * 100, 100);
     return (
         <Drawer>
             <DrawerTrigger asChild>
@@ -52,35 +47,6 @@ const Reward: FC = () => {
                             <div className="flex justify-between">
                                 <img src={wx} alt="China Flag" className="w-44 h-52" />
                                 <img src={al} alt="China Flag" className="w-44 h-52" />
-                            </div>
-                            <div className="bg-white rounded-lg text-center mt-4 h-[180px]">
-                                <h2 className="text-lg font-semibold mb-2">🎯 目标：支持 100 次</h2>
-
-                                <div className="relative mb-4">
-                                    <Line percent={percent} strokeWidth={6} strokeColor="#22c55e" />
-                                    <div className="absolute inset-0 flex justify-center items-center">
-                                        <span className="text-sm font-medium">{count} / {TOTAL}</span>
-                                    </div>
-                                </div>
-
-                                <AnimatePresence>
-                                    <motion.div
-                                        key={count}
-                                        initial={{ opacity: 0, y: -20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -20 }}
-                                        className="text-green-600 font-bold mb-2"
-                                    >
-                                        +1 🎉 感谢您的助力！
-                                    </motion.div>
-                                </AnimatePresence>
-
-                                <button
-                                    onClick={() => setCount((prev) => prev + 1)}
-                                    className="px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition"
-                                >
-                                    🚀我要助力
-                                </button>
                             </div>
                         </div>
                         <DrawerFooter>
