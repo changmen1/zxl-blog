@@ -1,11 +1,24 @@
 // TODO 文章组件
-import type { FC } from "react";
+import { useEffect, useState, type FC } from "react";
 import title from "@/assets/article/title.jpg"
 import { useNavigate } from "react-router-dom";
+import { getBlogList } from "@/common/article/service";
+import dayjs from "dayjs";
 
 
 const Article: FC = () => {
     const navigate = useNavigate();
+    const [datas, setDatas] = useState<Article.IArticle[]>()
+    const Init = async () => {
+        const { data } = await getBlogList({
+            pageNum: 1,
+            pageSize: 4
+        })
+        setDatas(data.rows)
+    }
+    useEffect(() => {
+        Init()
+    }, [])
     return (
         <main className="flex flex-col items-start w-full">
             <div className="border-l-4 border-l-bl pl-2 mb-2.5">
@@ -22,60 +35,40 @@ const Article: FC = () => {
                         }}
                     >
                         {/* 白色渐变叠加层 */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 to-white/100"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 to-white/50"></div>
                     </div>
                 </div>
 
                 {/* 内容层 */}
                 <div className="relative z-10 flex h-full w-full flex-col items-end justify-between p-2">
                     <div className=" bg-red-500 px-2 py-0.5 font-bold text-sm">
-                        55 °C
+                        {datas?.[0]?.author}
                     </div>
                     <div className="mb-[6.5px] flex flex-col items-end text-right" onClick={() => {
                         navigate('/article/details');
                     }}>
                         <div className="mb-1 text-lg leading-tight md:text-base">
-                            时间之河与本我的航程
+                            {datas?.[0]?.title}
                         </div>
                         <div className="text-sm group-hover:text-inherit md:text-xs ">
-                            2025-06-08 15:26:29
+                            {datas?.[0]?.updatedAt}
                         </div>
                     </div>
                 </div>
             </div>
             <ul className="w-full">
-                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4 text-[14px] font-Audiowide">131℃</span>
-                        <span className="text-dateCl mr-4">/</span>
-                        <span className="font-KuaiLe text-[18px]">上一次是什么时候呢</span>
-                    </div>
-                    <div className="flex-3 text-dateCl text-[13px] font-Audiowide">2025-06-15 1:50</div>
-                </li>
-                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4 text-[14px] font-Audiowide">131℃</span>
-                        <span className="text-dateCl mr-4">/</span>
-                        <span className="font-KuaiLe text-[18px]">上一次是什么时候呢</span>
-                    </div>
-                    <div className="flex-3 text-dateCl text-[13px] font-Audiowide">2025-06-15 1:50</div>
-                </li>
-                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4 text-[14px] font-Audiowide">131℃</span>
-                        <span className="text-dateCl mr-4">/</span>
-                        <span className="font-KuaiLe text-[18px]">上一次是什么时候呢</span>
-                    </div>
-                    <div className="flex-3 text-dateCl text-[13px] font-Audiowide">2025-06-15 1:50</div>
-                </li>
-                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4 text-[14px] font-Audiowide">131℃</span>
-                        <span className="text-dateCl mr-4">/</span>
-                        <span className="font-KuaiLe text-[18px]">上一次是什么时候呢</span>
-                    </div>
-                    <div className="flex-3 text-dateCl text-[13px] font-Audiowide">2025-06-15 1:50</div>
-                </li>
+                {
+                    datas?.map(o => (
+                        <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
+                            <div className="flex-1 basis-2/3">
+                                <span className="text-dateCl mr-4 text-[14px] font-Audiowide">{o.author}</span>
+                                <span className="text-dateCl mr-4">/</span>
+                                <span className="font-KuaiLe text-[18px]">{o.title}</span>
+                            </div>
+                            <div className="basis-1/3 text-dateCl text-[13px] font-Audiowide">{dayjs(o.updatedAt).format('YYYY-MM-DD HH:mm:ss')}</div>
+                        </li>
+                    ))
+                }
             </ul>
         </main>
     )
