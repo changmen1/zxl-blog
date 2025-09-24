@@ -11,7 +11,8 @@ const DefaultLayout: FC = () => {
         <SidebarProvider>
             <SidebarInset>
                 <Header />
-                <main className="flex-1 bg-main">
+                {/* TODO Footer组件fixed 高度40 所以设置 mb-10 */}
+                <main className="flex-1 bg-main mb-10">
                     <AnimatePresence mode="wait">
                         <Outlet key={location.pathname} />
                     </AnimatePresence>
