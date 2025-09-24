@@ -24,8 +24,8 @@ const Article: FC = () => {
     }, [])
 
     return (
-        <div className="pt-10">
-            <div className="w-[960px] block ml-auto mr-auto pb-5">
+        <div className="md:p-0 p-2.5">
+            <div className="md:w-[960px] block ml-auto mr-auto pb-5 mt-10">
                 <ul className="w-full">
                     {
                         datas?.map(o => (
@@ -36,20 +36,20 @@ const Article: FC = () => {
                                     navigate('/article/details', { state: o?.id, });
                                 }}
                             >
-                                <div className="flex-1 basis-2/3">
+                                <div className="flex-1 md:text-[13px] text-[10px]">
                                     <span className="text-dateCl mr-4 text-[14px] font-Audiowide">{o.author}</span>
                                     <span className="text-dateCl mr-4">/</span>
                                     <span className="font-KuaiLe text-[18px]">{o.title}</span>
                                 </div>
-                                <div className="basis-1/3 text-dateCl text-[13px] font-Audiowide">{dayjs(o.updatedAt).format('YYYY-MM-DD HH:mm:ss')}</div>
+                                <div className="text-dateCl md:text-[13px] text-[10px] font-Audiowide">{dayjs(o.updatedAt).format('YYYY-MM-DD HH:mm:ss')}</div>
                             </li>
                         ))
                     }
                 </ul>
-                <Pagination totle={total ?? 0} count={1} handleSearch={async (num: number) => {
+                <Pagination totle={total ?? 0} count={10} handleSearch={async (num: number) => {
                     const { data } = await getBlogList({
                         pageNum: num,
-                        pageSize: 1
+                        pageSize: 10
                     })
                     setDatas(data.rows)
                     setTotal(data.total)

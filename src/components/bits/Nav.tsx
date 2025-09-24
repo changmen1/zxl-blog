@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Link } from "react-router-dom";
 import menuBg from "@/assets/article/title.jpg"
+import hua from "@/assets/article/hua8.jpg"
 import author from "@/assets/author/author3.jpg"
 import { ModeToggle } from "../mode-toggle";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
@@ -173,6 +174,7 @@ const Nav: FC = () => {
                             </div>
                         </div>
                         <SheetFooter>
+                            <img src={hua} alt="" className="w-full h-full object-cover" />
                             <SheetClose asChild>
                                 <Button variant="outline">关闭</Button>
                             </SheetClose>
