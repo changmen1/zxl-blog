@@ -13,7 +13,7 @@ import App from './App.tsx'
 import { ThemeProvider } from './components/theme-provider.tsx'
 import { useLoadingComplete, useInit } from './hooks/use-fillingPoint.ts'
 import useFingerprintJS from './hooks/use-fingerprintJS.ts'
-import Utils from './components/utils/index.tsx'
+// import Utils from './components/utils/index.tsx'
 // import SplashCursor from './components/bits/Move.tsx'
 
 useLoadingComplete('ZxlBlog程序初始化加载完成!')
@@ -29,7 +29,7 @@ createRoot(document.getElementById('zxl')!).render(
   // <StrictMode>
   <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <App />
-    <Utils />
+    {/* <Utils /> */}
     {/* 鼠标特效 */}
     {/* <SplashCursor /> */}
   </ThemeProvider>

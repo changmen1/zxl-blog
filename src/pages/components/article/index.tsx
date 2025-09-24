@@ -25,7 +25,7 @@ const Article: FC = () => {
                 <h1 className="font-ZCOOL text-xl">最新文章</h1>
                 <div className="font-YWZCOOL">Latest articles</div>
             </div>
-            <div className="group relative mb-3 h-[80px] w-full cursor-pointer overflow-hidden rounded-l-lg  hover:text-red-100 ">
+            <div className="group relative mb-3 h-[80px] w-full cursor-pointer overflow-hidden rounded-l-lg hover:text-red-100 ">
                 {/* 背景层：图片 */}
                 <div className="absolute w-full h-full">
                     <div
@@ -66,12 +66,12 @@ const Article: FC = () => {
                                 navigate('/article/details', { state: o?.id, });
                             }}
                         >
-                            <div className="flex-1 basis-2/3">
-                                <span className="text-dateCl mr-4 text-[14px] font-Audiowide">{o.author}</span>
+                            <div className="flex-1 md:text-[13px] text-[10px]">
+                                <span className="text-dateCl mr-4 font-Audiowide">{o.author}</span>
                                 <span className="text-dateCl mr-4">/</span>
-                                <span className="font-KuaiLe text-[18px]">{o.title}</span>
+                                <span className="font-KuaiLe">{o.title}</span>
                             </div>
-                            <div className="basis-1/3 text-dateCl text-[13px] font-Audiowide">{dayjs(o.updatedAt).format('YYYY-MM-DD HH:mm:ss')}</div>
+                            <div className="text-dateCl md:text-[13px] text-[10px] font-Audiowide">{dayjs(o.updatedAt).format('YYYY-MM-DD HH:mm:ss')}</div>
                         </li>
                     ))
                 }

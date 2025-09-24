@@ -43,37 +43,37 @@ const Recommend: FC = () => {
                 </div>
             </div>
             <ul className="w-full">
-                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4 text-[14px] font-Audiowide">131℃</span>
+                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 border-transparent hover:border-b-pink-500 transition-colors duration-300 items-center cursor-pointer">
+                    <div className="flex-1 md:text-[13px] text-[10px]">
+                        <span className="text-dateCl mr-4 font-Audiowide">131℃</span>
                         <span className="text-dateCl mr-4">/</span>
-                        <span className="font-KuaiLe text-[18px]">上一次是什么时候呢</span>
+                        <span className="font-KuaiLe">吃火锅</span>
                     </div>
-                    <div className="flex-3 text-dateCl text-[13px] font-Audiowide">2025-06-15 1:50</div>
+                    <div className="text-dateCl md:text-[13px] text-[10px] font-Audiowide">2025-06-15 1:50</div>
                 </li>
-                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4 text-[14px] font-Audiowide">131℃</span>
+                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 border-transparent hover:border-b-pink-500 transition-colors duration-300 items-center cursor-pointer">
+                    <div className="flex-1 md:text-[13px] text-[10px]">
+                        <span className="text-dateCl mr-4 font-Audiowide">131℃</span>
                         <span className="text-dateCl mr-4">/</span>
-                        <span className="font-KuaiLe text-[18px]">上一次是什么时候呢</span>
+                        <span className="font-KuaiLe">吃火锅</span>
                     </div>
-                    <div className="flex-3 text-dateCl text-[13px] font-Audiowide">2025-06-15 1:50</div>
+                    <div className="text-dateCl md:text-[13px] text-[10px] font-Audiowide">2025-06-15 1:50</div>
                 </li>
-                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4 text-[14px] font-Audiowide">131℃</span>
+                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 border-transparent hover:border-b-pink-500 transition-colors duration-300 items-center cursor-pointer">
+                    <div className="flex-1 md:text-[13px] text-[10px]">
+                        <span className="text-dateCl mr-4 font-Audiowide">131℃</span>
                         <span className="text-dateCl mr-4">/</span>
-                        <span className="font-KuaiLe text-[18px]">上一次是什么时候呢</span>
+                        <span className="font-KuaiLe">吃火锅</span>
                     </div>
-                    <div className="flex-3 text-dateCl text-[13px] font-Audiowide">2025-06-15 1:50</div>
+                    <div className="text-dateCl md:text-[13px] text-[10px] font-Audiowide">2025-06-15 1:50</div>
                 </li>
-                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center">
-                    <div className="flex-1 basis-2/3">
-                        <span className="text-dateCl mr-4 text-[14px] font-Audiowide">131℃</span>
+                <li className="flex justify-between w-full mt-3 pb-3 border-b-2 border-transparent hover:border-b-pink-500 transition-colors duration-300 items-center cursor-pointer">
+                    <div className="flex-1 md:text-[13px] text-[10px]">
+                        <span className="text-dateCl mr-4 font-Audiowide">131℃</span>
                         <span className="text-dateCl mr-4">/</span>
-                        <span className="font-KuaiLe text-[18px]">上一次是什么时候呢</span>
+                        <span className="font-KuaiLe">吃火锅</span>
                     </div>
-                    <div className="flex-3 text-dateCl text-[13px] font-Audiowide">2025-06-15 1:50</div>
+                    <div className="text-dateCl md:text-[13px] text-[10px] font-Audiowide">2025-06-15 1:50</div>
                 </li>
             </ul>
         </main>

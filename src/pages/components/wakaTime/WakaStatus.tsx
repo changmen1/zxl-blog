@@ -46,12 +46,10 @@ export default function WakaLanguageStats() {
         handleFetchWakaSummary()
     }, []);
 
-
-
     return (
-        <div className="text-sm">
+        <div className="text-sm truncate">
             {languages.length > 0 ? (
-                <div className='flex text-[8px]'>
+                <div className='flex md:text-[8px]  text-[5px]'>
                     <div className='flex mr-10 items-center'>
                         <p className="font-medium text-EditorTl">今日开发环境:</p>
                         <ul className="list-disc ml-4 flex">
@@ -72,7 +70,7 @@ export default function WakaLanguageStats() {
                             })}
                         </ul>
                     </div>
-                    <div className='flex items-center'>
+                    <div className='hidden md:flex items-center'>
                         <p className="font-medium text-EditorTl">今日语言使用分布:</p>
                         <ul className="list-disc ml-4 flex">
                             {languages.map((language) => (

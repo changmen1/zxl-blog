@@ -73,7 +73,7 @@ const Home: FC = () => {
                 </div>
             </div>
             {/* 文章 */}
-            <div className="relative z-10 w-full bg-main p-5 flex justify-between gap-4 pb-10 pl-18 pr-18">
+            <div className="relative w-full bg-main p-5 md:flex md:justify-between gap-4 pb-10 pl-18 pr-18">
                 <WaveHeader />
                 <div className="flex-1 basis-1/3">
                     <Article />
@@ -85,8 +85,8 @@ const Home: FC = () => {
                     <Recommend />
                 </div>
             </div>
-            {/* 时间线 */}
-            <div className="relative z-10 w-full bg-Timeline pb-10 pt-10 pl-18 pr-18">
+            {/* TODO 暂定时间线 后续需要修改*/}
+            <div className="relative w-full bg-Timeline pb-10 pt-10 pl-18 pr-18">
                 <Timeline />
             </div>
         </div>

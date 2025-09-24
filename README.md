@@ -34,6 +34,7 @@ git push origin --force
 
 ```css
     className="hidden md:flex"
+    md:w-full
 ```
 
 > 移动端
