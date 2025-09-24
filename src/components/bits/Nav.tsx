@@ -103,13 +103,13 @@ const Nav: FC = () => {
                                         </Link>
                                     </NavigationMenuLink>
                                     <NavigationMenuLink asChild>
-                                        <Link to="#" className="flex-row items-center gap-2">
+                                        <Link to="/gourmetFood" className="flex-row items-center gap-2">
                                             美食
                                         </Link>
                                     </NavigationMenuLink>
                                     <NavigationMenuLink asChild>
                                         <Link to="#" className="flex-row items-center gap-2">
-                                            梦境
+                                            毕设
                                         </Link>
                                     </NavigationMenuLink>
                                 </li>
@@ -143,12 +143,12 @@ const Nav: FC = () => {
             <div className="flex md:hidden">
                 <Sheet>
                     <SheetTrigger asChild>
-                        <Button className="p-2 rounded-md border" variant="outline">菜单</Button>
+                        <Button className="p-2 rounded-md  border-none bg-customGray mr-1.5" variant="outline">菜单</Button>
                     </SheetTrigger>
                     <ModeToggle />
                     <SheetContent className="w-[120px] sm:w-[540px]">
                         <SheetHeader>
-                            <SheetTitle>菜单栏</SheetTitle>
+                            <SheetTitle>踩一下吧！</SheetTitle>
                             <SheetDescription>
                                 <img src={menuBg} alt="" className="w-full h-full object-cover" />
                             </SheetDescription>
@@ -156,21 +156,13 @@ const Nav: FC = () => {
                         <div className="grid flex-1 auto-rows-min gap-6 px-4">
                             <div className="grid gap-3">
                                 <Link to="/">首页</Link>
+                                <Link to="/article">文章</Link>
+                                <Link to="landscape">风景</Link>
+                                <Link to="/gourmetFood">美食</Link>
+                                <Link to="/graduationProject">毕设</Link>
+                                <Link to="/cv">简历</Link>
                                 <Link to="/blog">关于我</Link>
                                 <Link to="/rentalSubsidy">租房合同</Link>
-                                <Link to="/cv">简历</Link>
-                                <Link to="/article">
-                                    文章
-                                </Link>
-                                <Link to="landscape">
-                                    风景
-                                </Link>
-                                <Link to="#">
-                                    美食
-                                </Link>
-                                <Link to="#">
-                                    梦境
-                                </Link>
                             </div>
                         </div>
                         <SheetFooter>

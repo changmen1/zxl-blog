@@ -9,6 +9,8 @@ import NotFound from "@/pages/NotFound"
 import Cv from "@/pages/Cv"
 import RentalSubsidy from "@/pages/rentalSubsidy"
 import ArticleDeatils from "@/pages/Article/components/Details."
+import GourmetFood from "@/pages/GourmetFood/GourmetFood"
+import GraduationProject from "@/pages/GraduationProject/GraduationProject"
 
 // 切换动画
 const PageWrapper = ({ children }: { children: React.ReactNode }) => (
@@ -68,6 +70,16 @@ export const router = createBrowserRouter([
                 // 风景
                 path: "landscape",
                 element: <PageWrapper><Landscape /></PageWrapper>,
+            },
+            {
+                // 美食
+                path: "gourmetFood",
+                element: <PageWrapper><GourmetFood /></PageWrapper>,
+            },
+            {
+                // 毕设
+                path: "graduationProject",
+                element: <PageWrapper><GraduationProject /></PageWrapper>,
             },
             {
                 // 租房合同

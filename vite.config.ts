@@ -17,6 +17,8 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: true,
+      port: 5173,
+      allowedHosts: 'all', // ⚠️ 开发用，不建议生产环境
       proxy: {
         '/wakatime': {
           target: 'https://wakatime.com/api/v1',

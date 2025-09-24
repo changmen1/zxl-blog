@@ -57,18 +57,18 @@ const Header: FC = () => {
                         <div className="font-YWZCOOL">landscape</div>
                     </div>
                 </div>
-                <div className="flex items-center cursor-pointer hover:text-blue-500 text-center">
+                <div className="flex items-center cursor-pointer hover:text-blue-500 text-center" onClick={() => handlePath('/gourmetFood')}>
                     <div className='bg-local-meishi w-[120px] h-[80px]' />
                     <div>
                         <h1 className="font-ZCOOL text-2xl">美食</h1>
                         <div className="font-YWZCOOL">gourmet food</div>
                     </div>
                 </div>
-                <div className="flex items-center cursor-pointer hover:text-blue-500 text-center">
+                <div className="flex items-center cursor-pointer hover:text-blue-500 text-center" onClick={() => handlePath('/graduationProject')}>
                     <div className='bg-local-mengjing w-[120px] h-[80px]' />
                     <div>
-                        <h1 className="font-ZCOOL text-2xl">梦境</h1>
-                        <div className="font-YWZCOOL">Dreams</div>
+                        <h1 className="font-ZCOOL text-2xl">毕设</h1>
+                        <div className="font-YWZCOOL">Graduation Project</div>
                     </div>
                 </div>
             </div>
