@@ -1,7 +1,7 @@
 const RentalAgreementA4 = () => {
     return (
         <>
-            <div className="relative w-[794px] h-[1123px] mx-auto bg-white p-10 text-[15px] leading-relaxed text-black print:shadow-none print:bg-white print:w-[794px] print:h-[1123px] print:p-10 font-serif">
+            <div className="relative md:w-[70vw] h-[1123px] mx-auto  p-10 text-[15px] leading-relaxed font-serif">
                 <p className="font-bold float-right">编号：_____________</p>
                 {/* 标题和信息 */}
                 <h1 className="text-2xl font-bold text-center mt-[250px]">租房合同</h1>
@@ -10,10 +10,10 @@ const RentalAgreementA4 = () => {
                     <p className="mb-2">乙方（承租人）：朱昕龙</p>
                     <p className="mb-6">签订日期：2024 年 11 月 10 日</p>
                 </div>
-                <p className="absolute bottom-5 right-0 left-0 text-center text-sm text-gray-500">-- 第 1 页 共 2 页 --</p>
+                <p className="absolute bottom-5 right-0 left-0 text-center text-sm">-- 第 1 页 共 2 页 --</p>
             </div>
             <br />
-            <div className="relative w-[794px] h-[1123px] mx-auto bg-white p-10 text-[15px] leading-relaxed text-black print:shadow-none print:bg-white print:w-[794px] print:h-[1123px] print:p-10 font-serif">
+            <div className="relative md:w-[70vw] h-[1123px] mx-auto p-10 text-[15px] leading-relaxedfont-serif">
                 <p>出租人（以下简称甲方）：</p>
                 <p>承租人（以下简称乙方）：</p>
                 <p>甲、乙双方当事人经充分协商，达成房屋租赁合同如下：</p>
@@ -50,11 +50,11 @@ const RentalAgreementA4 = () => {
                 <div className="mt-10 flex justify-between">
                     <div>
                         <p>甲方（签章）：</p>
-                        <div className="border-b border-gray-400 h-6 w-64 mt-2">郑博文</div>
+                        <div className="border-b border-gray-400 h-6 md:w-64 mt-2">郑博文</div>
                     </div>
                     <div>
                         <p>乙方（签章）：</p>
-                        <div className="border-b border-gray-400 h-6 w-64 mt-2">朱昕龙</div>
+                        <div className="border-b border-gray-400 h-6 md:w-64 mt-2">朱昕龙</div>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@ const RentalAgreementA4 = () => {
                     <p>签署日期：2024 年 11 月 10 日</p>
                 </div>
 
-                <p className="absolute bottom-5 right-0 left-0 text-center text-sm text-gray-500">--第 2 页 共 2 页 --</p>
+                <p className="absolute bottom-5 right-0 left-0 text-center text-sm">--第 2 页 共 2 页 --</p>
             </div>
         </>
     );
