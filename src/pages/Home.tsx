@@ -18,8 +18,8 @@ const Home: FC = () => {
         <div className="select-none">
             <Outlet />
             {/* 背景 */}
-            <div className="mt-[-30px] h-[100vh] md:mt-0 md:h-[41.8vw]">
-                <div className="fixed h-[100vh] w-full md:h-[41.8vw]">
+            <div className="relative h-[100vh] md:h-[70vh]">
+                <div className="fixed h-[100vh] w-full md:h-[70vh]">
                     {/* 图片背景 */}
                     <div
                         className="h-full w-full bg-cover bg-center bg-no-repeat transition-all duration-200"
@@ -39,7 +39,7 @@ const Home: FC = () => {
                         />
                     </div> */}
                     {/* 文字描述层 */}
-                    <div className="absolute top-8 left-8 text-white p-4 rounded-lg max-w-[90%] md:max-w-[60%]">
+                    <div className="absolute top-40 left-8 text-white p-4 rounded-lg max-w-[90%] md:max-w-[60%]">
                         <SplitText
                             text={china}
                             className="text-xl font-semibold text-center"

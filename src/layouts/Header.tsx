@@ -31,10 +31,11 @@ const Header: FC = () => {
                     animationDuration={2}
                     pauseBetweenAnimations={1}
                 />
+                {/* 菜单栏 */}
                 <Nav />
             </header>
             {/* 标题栏固定在导航下方 */}
-            <div className="fixed top-12 right-0 left-0 z-20 flex h-20 items-center bg-headerColorF justify-between border-b px-3 py-2">
+            <div className="hidden md:flex fixed top-12 right-0 left-0 z-20 h-20 items-center bg-headerColorF justify-between border-b px-3 py-2">
                 <div className="flex items-center cursor-pointer hover:text-blue-500 text-center" onClick={() => handlePath('/')}>
                     <div className='bg-local-chuyu w-[120px] h-[80px]' />
                     <div>

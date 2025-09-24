@@ -28,6 +28,20 @@ git push origin --force
 
 ## 页面内容宽度固定960px
 
+## 响应式
+
+> PC端
+
+```css
+    className="hidden md:flex"
+```
+
+> 移动端
+
+```css
+    className="flex md:hidden"
+```
+
 <!-- 
 react-bits（DavidHDev/react-bits）
 集成 80+ 动画组件：文本动效、背景动画、交互效果等 
