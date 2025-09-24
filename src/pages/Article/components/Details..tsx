@@ -55,15 +55,15 @@ const ArticleDeatils: FC = () => {
     }, [id])
 
     return (
-        <div className="pt-10">
-            <div className="w-[960px] block ml-auto mr-auto pb-5">
+        <div className="md:p-0 p-2.5">
+            <div className="md:w-[960px] block ml-auto mr-auto pb-5">
                 {
                     mds &&
                     <div className={style['markdown-body']}>
                         <div dangerouslySetInnerHTML={{ __html: md.render(mds) }} />
                     </div>
                 }
-                <div style={{ backgroundImage: `url(${bg})` }} className="w-[960px] flex items-center p-4 bg-cover bg-center mt-2">
+                <div style={{ backgroundImage: `url(${bg})` }} className="flex items-center p-4 bg-cover bg-center mt-2">
                     <div className="flex-1">
                         <p className="mb-3 text-lg font-semibold">💖 喜欢这篇文章吗？</p>
                         <p className="mb-0 text-sm opacity-90">

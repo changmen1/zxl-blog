@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
             //     ],
             // },
             {
-                // 自传
+                // 关于我
                 path: "blog",
                 element: <PageWrapper><Blog /></PageWrapper>,
             },
