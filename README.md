@@ -26,6 +26,8 @@ git filter-branch --force --index-filter "git rm --cached --ignore-unmatch 'src/
 git push origin --force
 ```
 
+## 页面内容宽度固定960px
+
 <!-- 
 react-bits（DavidHDev/react-bits）
 集成 80+ 动画组件：文本动效、背景动画、交互效果等 

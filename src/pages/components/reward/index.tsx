@@ -34,7 +34,6 @@ const Reward: FC = () => {
                     <img src={_S} alt="China Flag" className="w-10 h-7 mr-2 " />
                 </div>
             </DrawerTrigger>
-            {/* className="bg-[#f472b6]" */}
             <DrawerContent>
                 <div className="flex">
                     <div className="mx-auto w-full max-w-sm">

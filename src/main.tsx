@@ -17,9 +17,13 @@ import Utils from './components/utils/index.tsx'
 // import SplashCursor from './components/bits/Move.tsx'
 
 useLoadingComplete('ZxlBlog程序初始化加载完成!')
-// console.log("%c ", "background: url(http://p79mwfmry.bkt.clouddn.com/logo50.jpg) no-repeat center;padding-left:80px;padding-bottom: 80px;border-radius:50%;")
 useFingerprintJS()
-useInit()
+if (process.env.NODE_ENV === 'production') {
+  console.log(`%c这是生产环境`, 'color: white; background: red; padding: 2px 6px; border-radius: 4px;font-size:20px')
+  useInit()
+} else {
+  console.log(`%c这是开发环境`, 'color: white; background: red; padding: 2px 6px; border-radius: 4px;font-size:20px')
+}
 createRoot(document.getElementById('zxl')!).render(
   // TODO 关闭颜色模式
   // <StrictMode>

@@ -17,9 +17,6 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => (
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
         transition={{ duration: 0.3 }}
-    // initial={{ width: 0 }}
-    // animate={{ width: "100%" }}
-    // exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
     >
         {children}
     </motion.div>

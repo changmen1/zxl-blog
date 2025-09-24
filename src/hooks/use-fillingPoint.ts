@@ -71,6 +71,36 @@ const useLoadingComplete = (env: string) => {
  * ! 程序初始化
  */
 const useInit = () => {
+    // TODO ==================================禁用浏览器debugger==================================
+    function disableDebugger() {
+        const obj = Object.create(null);
+        // 记录当前时间
+        let t = Date.now();
+        //监听对象属性的获取
+        Object.defineProperty(obj, 'is_debug', {
+            get: () => {
+                // 当对象属性的取值方法被触发时，判断时间间隔是否大于50ms,替换为空白页
+                if (Date.now() - t > 50) {
+                    console.clear()
+                    location.replace('about:blank')
+                }
+            },
+        });
+
+        // 定时打印is_debug触发属性的get方法进行判断
+        setInterval(() => {
+            // 记录开始debugger时间
+            t = Date.now();
+            //触发debugger
+            //通过构造函数 Function 来创建一个新的函数，这个新函数的内容是调用debugger,
+            (function debug() {
+            })['constructor']('debugger')();
+            // 触发obj.is_debug的get方法
+            console.log(obj.is_debug);
+        }, 100);
+    }
+    disableDebugger()
+
     // TODO ==================================缩放禁用==================================
     const keyCodeMap: { [key: number]: boolean } = {
         // 91: true, // command

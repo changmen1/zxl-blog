@@ -59,9 +59,13 @@ const Article: FC = () => {
             <ul className="w-full">
                 {
                     datas?.map(o => (
-                        <li key={o.id} className="flex justify-between w-full mt-3 pb-3 border-b-2 items-center cursor-pointer" onClick={() => {
-                            navigate('/article/details', { state: o?.id, });
-                        }}>
+                        <li
+                            key={o.id}
+                            className="flex justify-between w-full mt-3 pb-3 border-b-2 border-transparent hover:border-b-pink-500 transition-colors duration-300 items-center cursor-pointer"
+                            onClick={() => {
+                                navigate('/article/details', { state: o?.id, });
+                            }}
+                        >
                             <div className="flex-1 basis-2/3">
                                 <span className="text-dateCl mr-4 text-[14px] font-Audiowide">{o.author}</span>
                                 <span className="text-dateCl mr-4">/</span>

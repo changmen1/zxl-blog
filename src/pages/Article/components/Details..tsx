@@ -6,7 +6,7 @@
  */
 
 import { useEffect, useState, type FC } from "react";
-// import bg from "@/assets/ArticleDeatils/bg.png"
+import bg from "@/assets/bg/hua7.jpg"
 import Reward from "@/pages/components/reward";
 import { getBlogList } from "@/common/article/service";
 import { useLocation } from "react-router-dom";
@@ -19,6 +19,11 @@ hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('json', json);
 import style from "./ArticleDeatils.module.less"
 
+/**
+ * !接收 文章id
+ * navigate('/article/details', { state: datas?.[0]?.id })
+ * @returns 
+ */
 const ArticleDeatils: FC = () => {
     const location: any = useLocation();
     const id = location.state
@@ -50,14 +55,7 @@ const ArticleDeatils: FC = () => {
     }, [id])
 
     return (
-        <div className="pt-10"
-            style={{
-                // backgroundImage: `url(${bg})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center top',
-                backgroundAttachment: 'scroll'
-            }}
-        >
+        <div className="pt-10">
             <div className="w-[960px] block ml-auto mr-auto pb-5">
                 {
                     mds &&
@@ -65,8 +63,8 @@ const ArticleDeatils: FC = () => {
                         <div dangerouslySetInnerHTML={{ __html: md.render(mds) }} />
                     </div>
                 }
-                <div className="w-[960px] bg-[oklch(65.6%_0.241_354.308/1)] flex items-center p-4">
-                    <div className="flex-1 text-yellow-300">
+                <div style={{ backgroundImage: `url(${bg})` }} className="w-[960px] flex items-center p-4 bg-cover bg-center mt-2">
+                    <div className="flex-1">
                         <p className="mb-3 text-lg font-semibold">💖 喜欢这篇文章吗？</p>
                         <p className="mb-0 text-sm opacity-90">
                             如果它对你有帮助，请考虑打赏支持一下作者～
