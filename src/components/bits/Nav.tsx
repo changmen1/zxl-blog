@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import menuBg from "@/assets/article/title.jpg"
 import author from "@/assets/author/author3.jpg"
 import { ModeToggle } from "../mode-toggle";
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
+import { Button } from "../ui/button";
 
 const Nav: FC = () => {
     function ListItem({
@@ -138,7 +140,45 @@ const Nav: FC = () => {
             </NavigationMenu>
             {/* 移动端菜单 */}
             <div className="flex md:hidden">
-                <button className="p-2 rounded-md border">菜单</button>
+                <Sheet>
+                    <SheetTrigger asChild>
+                        <Button className="p-2 rounded-md border" variant="outline">菜单</Button>
+                    </SheetTrigger>
+                    <ModeToggle />
+                    <SheetContent className="w-[120px] sm:w-[540px]">
+                        <SheetHeader>
+                            <SheetTitle>菜单栏</SheetTitle>
+                            <SheetDescription>
+                                <img src={menuBg} alt="" className="w-full h-full object-cover" />
+                            </SheetDescription>
+                        </SheetHeader>
+                        <div className="grid flex-1 auto-rows-min gap-6 px-4">
+                            <div className="grid gap-3">
+                                <Link to="/">首页</Link>
+                                <Link to="/blog">关于我</Link>
+                                <Link to="/rentalSubsidy">租房合同</Link>
+                                <Link to="/cv">简历</Link>
+                                <Link to="/article">
+                                    文章
+                                </Link>
+                                <Link to="landscape">
+                                    风景
+                                </Link>
+                                <Link to="#">
+                                    美食
+                                </Link>
+                                <Link to="#">
+                                    梦境
+                                </Link>
+                            </div>
+                        </div>
+                        <SheetFooter>
+                            <SheetClose asChild>
+                                <Button variant="outline">关闭</Button>
+                            </SheetClose>
+                        </SheetFooter>
+                    </SheetContent>
+                </Sheet>
             </div>
         </>
     )
