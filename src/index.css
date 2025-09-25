@@ -5,6 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  /* 笔记本 */
+  --breakpoint-nb: 1366px;
+  /* 显示器 */
+  --breakpoint-hd: 1920px;
   /* 中文文章标题 */
   --font-ZCOOL: "ZCOOL XiaoWei", sans-serif;
   /* 英文文章标题 */
@@ -180,6 +184,19 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+.text {
+  position: absolute;
+  z-index: 9999999;
+  font-weight: bold;
+  user-select: none;
+}
+
+@keyframes remove {
+  100% {
+    opacity: 0;
+  }
 }
 
 @layer base {

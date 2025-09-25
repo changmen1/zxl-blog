@@ -73,21 +73,25 @@ const Home: FC = () => {
                 </div>
             </div>
             {/* 文章 */}
-            <div className="relative w-full bg-main p-5 md:flex md:justify-between gap-4 pb-10 pl-18 pr-18">
+            <div className="relative bg-main w-full">
                 <WaveHeader />
-                <div className="flex-1 basis-1/3">
-                    <Article />
-                </div>
-                <div className="flex-1 basis-1/3">
-                    <Dreams />
-                </div>
-                <div className="flex-1 basis-1/3">
-                    <Recommend />
+                <div className="relative bg-main p-5 md:flex md:justify-between gap-4 pb-10 pl-18 pr-18 nb:w-[90vw] hd:w-[70vw] ml-auto mr-auto">
+                    <div className="flex-1 basis-1/3">
+                        <Article />
+                    </div>
+                    <div className="flex-1 basis-1/3">
+                        <Dreams />
+                    </div>
+                    <div className="flex-1 basis-1/3">
+                        <Recommend />
+                    </div>
                 </div>
             </div>
             {/* TODO 暂定时间线 后续需要修改*/}
-            <div className="relative w-full bg-Timeline pb-10 pt-10 pl-18 pr-18">
-                <Timeline />
+            <div className="relative bg-Timeline w-full">
+                <div className="nb:w-[90vw] hd:w-[70vw] ml-auto mr-auto pb-10 pt-10 pl-18 pr-18 ">
+                    <Timeline />
+                </div>
             </div>
         </div>
     );

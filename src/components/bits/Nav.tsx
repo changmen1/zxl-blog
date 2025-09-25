@@ -121,21 +121,6 @@ const Nav: FC = () => {
                             <Link to="/cv">简历</Link>
                         </NavigationMenuLink>
                     </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink asChild className="bg-customGray">
-                            <Link to="/cv">简历</Link>
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink asChild className="bg-customGray">
-                            <Link to="/cv">简历</Link>
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink asChild className="bg-customGray">
-                            <Link to="/cv">简历</Link>
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
                     <ModeToggle />
                 </NavigationMenuList>
             </NavigationMenu>

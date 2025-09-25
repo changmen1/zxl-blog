@@ -61,3 +61,8 @@ react-bits（DavidHDev/react-bits）
 控制音乐声音大小特效组件 Elastic Slider
 动态背景 Aurora
 -->
+
+<!-- 
+// @ts-ignore 单行类型检查跳过
+// @ts-nocheck 跳过整个文件类型检查 
+-->
