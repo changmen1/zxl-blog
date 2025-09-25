@@ -9,11 +9,25 @@ import Timeline from "./components/Timeline";
 import { Outlet } from "react-router-dom";
 import SplitText from "@/components/bits/SplitText"
 import WaveHeader from "@/components/demo/WaveHeader";
+// import SvgTimeline from "@/components/SvgTimeline";
 
 const Home: FC = () => {
     const handleAnimationComplete = () => {
         console.log('All letters have animated!');
     };
+    // const data = [
+    //     { time: "2025-07-08 14:20", label: "起飞" },
+    //     { time: "2025-07-08 14:22", label: "转弯" },
+    //     { time: "2025-07-08 14:25", label: "发现问题" },
+    //     { time: "2025-07-08 14:27", label: "飞行" },
+    //     { time: "2025-07-08 14:29", label: "飞行" },
+    //     { time: "2025-07-08 14:31", label: "飞行" },
+    //     { time: "2025-07-08 14:33", label: "转弯" },
+    //     { time: "2025-07-08 14:35", label: "飞行" },
+    //     { time: "2025-07-08 14:37", label: "降落" },
+    //     { time: "2025-07-08 14:39", label: "降落" },
+    //     { time: "2025-07-08 14:41", label: "返航" },
+    // ];
     return (
         <div className="select-none">
             <Outlet />
@@ -89,7 +103,8 @@ const Home: FC = () => {
             </div>
             {/* TODO 暂定时间线 后续需要修改*/}
             <div className="relative bg-Timeline w-full">
-                <div className="nb:w-[90vw] hd:w-[70vw] ml-auto mr-auto pb-10 pt-10 pl-18 pr-18 ">
+                <div className="nb:w-[90vw] hd:w-[70vw] ml-auto mr-auto pb-10 pt-10 pl-18 pr-18">
+                    {/* <SvgTimeline data={data} maxPerRow={7} /> */}
                     <Timeline />
                 </div>
             </div>
