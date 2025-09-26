@@ -67,7 +67,7 @@ const Header: FC = () => {
                             <div className="font-YWZCOOL">gourmet food</div>
                         </div>
                     </div>
-                    <div className="flex items-center cursor-pointer hover:text-blue-500 text-center" onClick={() => handlePath('/graduationProject')}>
+                    <div className="flex items-center cursor-pointer hover:text-blue-500 text-center" onClick={() => window.open("/h5/graduationProject", "_blank")}>
                         <div className='bg-local-mengjing w-[120px] h-[80px]' />
                         <div>
                             <h1 className="font-ZCOOL text-2xl">毕设</h1>

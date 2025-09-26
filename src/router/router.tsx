@@ -93,15 +93,15 @@ export const router = createBrowserRouter([
             },
         ],
     },
-    // {
-    //     // 文章
-    //     path: "/wenzhang",
-    //     children: [
-    //         {
-    //             // 文章詳情
-    //             path: "/wenzhang/details",
-    //             element: <ArticleDeatils />,
-    //         },
-    //     ]
-    // },
+    {
+        // H5营销页
+        path: "/h5",
+        children: [
+            {
+                // 文章詳情
+                path: "/h5/graduationProject",
+                element: <GraduationProject />,
+            },
+        ]
+    },
 ])

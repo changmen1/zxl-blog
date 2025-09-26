@@ -108,7 +108,7 @@ const Nav: FC = () => {
                                         </Link>
                                     </NavigationMenuLink>
                                     <NavigationMenuLink asChild>
-                                        <Link to="#" className="flex-row items-center gap-2">
+                                        <Link to="/h5/graduationProject" target="_blank" rel="noopener noreferrer" className="flex-row items-center gap-2">
                                             毕设
                                         </Link>
                                     </NavigationMenuLink>
@@ -144,7 +144,7 @@ const Nav: FC = () => {
                                 <Link to="/article">文章</Link>
                                 <Link to="landscape">风景</Link>
                                 <Link to="/gourmetFood">美食</Link>
-                                <Link to="/graduationProject">毕设</Link>
+                                <Link to="/h5/graduationProject" target="_blank" rel="noopener noreferrer">毕设</Link>
                                 <Link to="/cv">简历</Link>
                                 <Link to="/blog">关于我</Link>
                                 <Link to="/rentalSubsidy">租房合同</Link>
